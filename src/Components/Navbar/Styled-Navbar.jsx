@@ -121,12 +121,12 @@ let Nav = styled.nav`
     
     div {
       padding-bottom:12px;
-      padding-right: 2vw;
+      padding-right: 1.6vw;
       background-color: #fff;
       // flex-grow: 1;
 
       p {
-        margin: 10px 19px 13px;
+        margin: 10px 20px 13px;
         font-size: 15px;
         cursor:pointer;
 

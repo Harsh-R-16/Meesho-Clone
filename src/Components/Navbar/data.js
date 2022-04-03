@@ -82,7 +82,7 @@ let data = [
       "Bangles",
     ],
     [
-      "Women Accessory",
+      "Women Accessories",
       "All Accessory",
       "Silk Sarees ",
       "Necklaces",
@@ -212,6 +212,14 @@ let data = [
     ["Computers", "All New Computers", "Hars Disks", "Pendrives"],
     ["Laptops", "All Materials", "Mouse", "Keyboard", "All Devices"],
     ["Others", "Speakers", "Lights", "Bulbs"],
+    [
+      "New Accessories",
+      "Smart Devices",
+      "Watches",
+      "Hand Bands",
+      "Cases Bands",
+      "Covers",
+    ],
   ],
 ];
 
