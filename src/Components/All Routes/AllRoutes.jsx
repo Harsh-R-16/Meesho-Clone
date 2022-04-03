@@ -25,10 +25,42 @@ export default function AllRoutes() {
       </Routes>
       <Routes>
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/checkout/cart" element={<Cart />} />
-        <Route path="/checkout/address" element={<Address />} />
-        <Route path="/checkout/payment" element={<Payment />} />
-        <Route path="/checkout/summary" element={<Summary />} />
+        <Route
+          path="/checkout/cart"
+          element={
+            <>
+              <Checkout />
+              <Cart />
+            </>
+          }
+        />
+        <Route
+          path="/checkout/address"
+          element={
+            <>
+              <Checkout />
+              <Address />
+            </>
+          }
+        />
+        <Route
+          path="/checkout/payment"
+          element={
+            <>
+              <Checkout />
+              <Payment />
+            </>
+          }
+        />
+        <Route
+          path="/checkout/summary"
+          element={
+            <>
+              <Checkout />
+              <Summary />
+            </>
+          }
+        />
       </Routes>
       <Footer />
     </>
