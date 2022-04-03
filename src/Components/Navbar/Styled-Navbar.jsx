@@ -81,12 +81,12 @@ let Nav = styled.nav`
   }
 
   #bottom {
-    padding: 0px 2.8vw;
-    background-color: white;
-    color: #000;
-    border-bottom: 1px solid #dfdfdf;
-
-    ul {
+      background-color: white;
+      color: #000;
+      
+      ul {
+      padding: 0px 2.8vw;
+      border-bottom: 1px solid #dfdfdf;
       display: flex;
       align-items: center;
       list-style: none;
