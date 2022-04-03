@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 let Nav = styled.nav`
+  position: sticky;
+  top: 0px;
   #top {
     display: flex;
     align-items: center;
@@ -8,6 +10,7 @@ let Nav = styled.nav`
     background-color: white;
     color: #000;
     border-bottom: 1px solid #dfdfdf;
+    
 
     #logo {
       transform: translateY(-3px);
@@ -105,26 +108,22 @@ let Nav = styled.nav`
         font-size: 15px;
         padding: 17px 0;
         text-align: center;
-        &:hover {
-          color: #f43397;
-          border-bottom: 3.2px solid #f43397;
-          transition: color 0.1s ease-in-out;
-        }
       }
     }
-  }
-
-  article {
-    margin: 0px 2.8vw;width:94.4vw;
+    article {
+    border: 1px solid #dfdfdf;
     background-color: white;
     color: rgb(92, 92, 92);
-    display: flex;height:0px;
+    display: flex;
+    margin: 0px 2.8vw;
+    border-top:0;
     
-
+    
     div {
+      padding-bottom:12px;
       padding-right: 2vw;
       background-color: #fff;
-      flex-grow: 1;
+      // flex-grow: 1;
 
       p {
         margin: 10px 19px 13px;
@@ -147,6 +146,9 @@ let Nav = styled.nav`
       background-color: rgb(249, 249, 249);
     }
   }
+  }
+
+ 
 `;
 
 export { Nav };

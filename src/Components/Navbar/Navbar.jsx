@@ -1,23 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Nav } from "./Styled-Navbar";
-import { listItems } from "./data";
+import { listItems, data } from "./data";
 import "./navbar.css";
 
 export default function Navbar() {
-  let [height, setHeight] = useState("");
-
-  const hoverIn = (e, index) => {
-    let ele = e.target.tagName.toLowerCase();
-
-    if (ele === "li" || ele === "article" || ele === "div" || ele === "p") {
-      setHeight("height");
-      // console.log(ele);
-    }
+  let [index, setIndex] = useState(0);
+  const mouseOver = (e) => {
+    e.currentTarget.classList.add("height");
   };
-  const hoverOut = (e, index) => {
-    setHeight("");
+
+  const mouseOut = (e) => {
+    e.currentTarget.classList.remove("height");
   };
-  console.log(height);
+
+  useEffect(() => {
+    document.querySelectorAll("li")[index].classList.add("li");
+    return () => {
+      document.querySelectorAll("li")[index].classList.remove("li");
+    };
+  });
   return (
     <>
       <Nav>
@@ -96,67 +97,70 @@ export default function Navbar() {
             Cart
           </p>
         </section>
-        <section id="bottom">
+        <section id="bottom" onMouseOver={mouseOver} onMouseOut={mouseOut}>
           <ul>
             {listItems.map((i, index) => (
-              <li
-                key={index}
-                onMouseOver={(e) => hoverIn(e, index)}
-                onMouseOut={(e) => hoverOut(e, index)}
-              >
+              <li key={index} id={index} onMouseOver={() => setIndex(index)}>
                 {i}
               </li>
             ))}
           </ul>
+          <article onMouseOut={mouseOut}>
+            {data[index].map((items, index) => (
+              <div>
+                {items.map((item, index) => (
+                  <p>{item}</p>
+                ))}
+              </div>
+            ))}
+            {/* <div>
+              <p class="title-para">All Women Ethnic</p>
+              <p>View All </p>
+            </div>
+            <div>
+              <p class="title-para">Sarees </p>
+              <p>All Sarees </p>
+              <p>Silk Sarees </p>
+              <p>Cotton Silk Sarees </p>
+              <p>Cotton Sarees</p>
+              <p>Georgette Sarees</p>
+              <p>Chiffon Sarees </p>
+              <p>Satin Sarees</p>
+              <p>Embroidered Sarees</p>
+            </div>
+            <div>
+              <p class="title-para">Kurtis</p>
+              <p>All Kurtis </p>
+              <p>Anarkali Kurtis</p>
+              <p>Rayon Kurtis</p>
+              <p>Cotton Kurtis</p>
+              <p>Embroidered Kurties</p>
+            </div>
+            <div>
+              <p class="title-para">Suits & Dress Material</p>
+              <p>All Suits & Dress Materials </p>
+              <p>Cotton Suits</p>
+              <p>Embroidered Suits</p>
+              <p>Chanderi Suits</p>
+            </div>
+            <div>
+              <p class="title-para">Other Ethnic</p>
+              <p>Blouses </p>
+              <p>Dupattas</p>
+              <p>Lehanga</p>
+              <p>Cotton Sarees</p>
+              <p>Gown</p>
+              <p>Ethnic Bottomwear</p>
+              <p>Embroidered Ethnic</p>
+            </div>
+            <div>
+              <p class="title-para">Kurta Sets</p>
+              <p>All Kurta Sets</p>
+              <p>All Indian </p>
+              <p>Kurta Embroidered Kurta</p>
+            </div> */}
+          </article>
         </section>
-        <article className={height} onMouseOver={hoverIn} onMouseOut={hoverOut}>
-          <div>
-            <p class="title-para">All Women Ethnic</p>
-            <p>View All </p>
-          </div>
-          <div>
-            <p class="title-para">Sarees </p>
-            <p>All Sarees </p>
-            <p>Silk Sarees </p>
-            <p>Cotton Silk Sarees </p>
-            <p>Cotton Sarees</p>
-            <p>Georgette Sarees</p>
-            <p>Chiffon Sarees </p>
-            <p>Satin Sarees</p>
-            <p>Embroidered Sarees</p>
-          </div>
-          <div>
-            <p class="title-para">Kurtis</p>
-            <p>All Kurtis </p>
-            <p>Anarkali Kurtis</p>
-            <p>Rayon Kurtis</p>
-            <p>Cotton Kurtis</p>
-            <p>Embroidered Kurties</p>
-          </div>
-          <div>
-            <p class="title-para">Suits & Dress Material</p>
-            <p>All Suits & Dress Materials </p>
-            <p>Cotton Suits</p>
-            <p>Embroidered Suits</p>
-            <p>Chanderi Suits</p>
-          </div>
-          <div>
-            <p class="title-para">Other Ethnic</p>
-            <p>Blouses </p>
-            <p>Dupattas</p>
-            <p>Lehanga</p>
-            <p>Cotton Sarees</p>
-            <p>Gown</p>
-            <p>Ethnic Bottomwear</p>
-            <p>Embroidered Ethnic</p>
-          </div>
-          <div>
-            <p class="title-para">Kurta Sets</p>
-            <p>All Kurta Sets</p>
-            <p>All Indian </p>
-            <p>Kurta Embroidered Kurta</p>
-          </div>
-        </article>
       </Nav>
     </>
   );

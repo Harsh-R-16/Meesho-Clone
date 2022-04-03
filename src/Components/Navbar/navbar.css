@@ -1,14 +1,17 @@
-article {
-  position: absolute;
+#bottom {
+  height: 56px;
   overflow: hidden;
 }
 .height {
-  height: fit-content !important;
-  border: 1px solid #dfdfdf;
+  overflow: visible !important;
   border-top: none;
+  transition: 1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 .li {
   color: #f43397;
   border-bottom: 3.2px solid #f43397;
   transition: color 0.1s ease-in-out;
+}
+article {
+  box-shadow: -1px 5px 20px 0px rgba(223, 223, 223, 0.75);
 }
