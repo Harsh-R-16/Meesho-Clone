@@ -1,0 +1,14 @@
+article {
+  position: absolute;
+  overflow: hidden;
+}
+.height {
+  height: fit-content !important;
+  border: 1px solid #dfdfdf;
+  border-top: none;
+}
+.li {
+  color: #f43397;
+  border-bottom: 3.2px solid #f43397;
+  transition: color 0.1s ease-in-out;
+}
