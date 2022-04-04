@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 let Main = styled.main`
-  padding: 50px 7vw;
+  padding: 50px 2.8vw;
   #homepage {
     display: grid;
+    margin: 5px 3.4vw;
     grid-template-columns: 1fr 1fr;
     gap: 5vw;
     background-color: #f9f9f9;
@@ -55,7 +56,7 @@ let Main = styled.main`
   #h1-line {
     display: flex;
     align-items: center;
-    margin: 55px 0;
+    margin: 55px 3.4vw;
 
     hr {
       flex-grow: 1;
@@ -69,6 +70,7 @@ let Main = styled.main`
 
   #image-container {
     text-align: center;
+    margin: 5px 3.4vw 10px;
     img {
       width: 100%;
       height: 75vh;
@@ -78,6 +80,21 @@ let Main = styled.main`
       &:nth-of-type(4) {
         height: 300px;
       }
+    }
+  }
+
+  #h1-line2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 55px;
+
+    hr {
+      flex-grow: 1;
+      border: none;
+      border-top: 1px solid #f43397;
+    }
+    h1 {
+      margin: 0 3vw;
     }
   }
 `;

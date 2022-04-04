@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 let Nav = styled.nav`
   position: sticky;
-  top: 0px;
+  top: 0px;z-index:1;
   #top {
     display: flex;
     align-items: center;
