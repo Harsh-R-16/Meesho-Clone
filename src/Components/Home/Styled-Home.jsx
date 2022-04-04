@@ -71,8 +71,9 @@ let Main = styled.main`
     text-align: center;
     img {
       width: 100%;
-      height: 70vh;
+      height: 75vh;
       margin-bottom: 6.5vh;
+      border-radius: 10px;
 
       &:nth-of-type(4) {
         height: 300px;

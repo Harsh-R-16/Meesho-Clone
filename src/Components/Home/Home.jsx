@@ -4,9 +4,11 @@ import img1 from "./Images/img1.png";
 import img2 from "./Images/img2.png";
 import img3 from "./Images/img3.png";
 import img4 from "./Images/img4.png";
+import { allProducts } from "../../AllProducts";
 import "./Home.css";
 
 export default function Home() {
+  console.log(allProducts);
   return (
     <Main>
       <section id="homepage">
@@ -40,6 +42,24 @@ export default function Home() {
         <img src={img3} alt="" />
         <img src={img4} alt="" />
       </div>
+
+      <section id="products">
+        {/* {allProducts.map(
+          ({ img, name, sprice, aprice, rating, reviews }, index) => (
+            <div>
+              <img src={img} alt="" />
+              <p>{name}</p>
+              <p>
+                ₹{sprice} <span>₹{aprice}</span>
+              </p>
+              <p>{((1 - sprice / aprice) * 100).toFixed(1)}</p>
+              <p>
+                {rating} {reviews}
+              </p>
+            </div>
+          )
+        )} */}
+      </section>
     </Main>
   );
 }
