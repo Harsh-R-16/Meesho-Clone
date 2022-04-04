@@ -15,3 +15,31 @@
 article {
   box-shadow: -1px 5px 20px 0px rgba(223, 223, 223, 0.75);
 }
+#top div {
+  position: relative;
+}
+#top div article {
+  background-color: #fff;
+  /* padding: 20px 2vw; */
+  position: absolute;
+  top: 41px;
+  left: 1px;
+  width: 99.9%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-height: 300px;
+  overflow-y: scroll;
+  box-shadow: 1px 1px 6px 1px #b9b9b9;
+  visibility: hidden;
+}
+#top div p {
+  padding: 8px 14px;
+  font-size: 13px !important;
+  margin: 0 !important;
+}
+#top div p:hover {
+  background-color: #e4e5e7;
+}
+#top div p svg {
+  margin-right: 9px;
+}

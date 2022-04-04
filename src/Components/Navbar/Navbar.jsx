@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Nav } from "./Styled-Navbar";
 import { listItems, data } from "./data";
+import { allProducts } from "../../AllProducts";
 import "./navbar.css";
 
 export default function Navbar() {
-  let [index, setIndex] = useState(0);
+  let article = document.querySelector("#search-results");
+  let [index, setIndex] = useState(8);
+  let [result, setResult] = useState([]);
   const mouseOver = (e) => {
     e.currentTarget.classList.add("height");
   };
@@ -19,6 +22,21 @@ export default function Navbar() {
       document.querySelectorAll("li")[index].classList.remove("li");
     };
   });
+
+  const inpHandler = (e) => {
+    let newArr = [];
+    for (let i = 0; i < allProducts.length; i++) {
+      if (allProducts[i].name.toLowerCase().includes(e.target.value)) {
+        newArr.push(allProducts[i].name);
+      }
+    }
+    if (newArr.length && e.target.value) {
+      setResult(newArr);
+      article.style.visibility = "visible";
+    } else {
+      article.style.visibility = "hidden";
+    }
+  };
   return (
     <>
       <Nav>
@@ -52,6 +70,7 @@ export default function Navbar() {
             <form action="">
               <input
                 type="text"
+                onChange={inpHandler}
                 placeholder="Try Saree, Kurti or Search by Product Code"
               />
             </form>
@@ -65,6 +84,23 @@ export default function Navbar() {
             >
               <path d="M6.7 25.3H12V28H6.7C5.2 28 4 26.8 4 25.3V20h2.7v5.3zm0-18.6H12V4H6.7C5.2 4 4 5.2 4 6.7V12h2.7V6.7zM25.3 4H20v2.7h5.3V12H28V6.7C28 5.2 26.8 4 25.3 4zm0 21.3H20V28h5.3c1.5 0 2.7-1.2 2.7-2.7V20h-2.7v5.3zm-4-9.3c0 2.9-2.4 5.3-5.3 5.3s-5.3-2.4-5.3-5.3 2.4-5.3 5.3-5.3 5.3 2.4 5.3 5.3zm-2.6 0c0-1.5-1.2-2.7-2.7-2.7s-2.7 1.2-2.7 2.7 1.2 2.7 2.7 2.7 2.7-1.2 2.7-2.7z"></path>
             </svg>
+            <article id="search-results">
+              {result.map((i, index) => (
+                <p>
+                  <svg
+                    width="20"
+                    height="20"
+                    className="DFW_E nT46U VETef"
+                    viewBox="0 0 32 32"
+                    version="1.1"
+                    aria-hidden="false"
+                  >
+                    <path d="M22 20c1.2-1.6 2-3.7 2-6 0-5.5-4.5-10-10-10S4 8.5 4 14s4.5 10 10 10c2.3 0 4.3-.7 6-2l6.1 6 1.9-2-6-6zm-8 1.3c-4 0-7.3-3.3-7.3-7.3S10 6.7 14 6.7s7.3 3.3 7.3 7.3-3.3 7.3-7.3 7.3z"></path>
+                  </svg>
+                  {i}
+                </p>
+              ))}
+            </article>
           </div>
           <p id="mobile">
             <img src="https://www.svgrepo.com/show/371405/mobile.svg" alt="" />
@@ -113,52 +149,6 @@ export default function Navbar() {
                 ))}
               </div>
             ))}
-            {/* <div>
-              <p class="title-para">All Women Ethnic</p>
-              <p>View All </p>
-            </div>
-            <div>
-              <p class="title-para">Sarees </p>
-              <p>All Sarees </p>
-              <p>Silk Sarees </p>
-              <p>Cotton Silk Sarees </p>
-              <p>Cotton Sarees</p>
-              <p>Georgette Sarees</p>
-              <p>Chiffon Sarees </p>
-              <p>Satin Sarees</p>
-              <p>Embroidered Sarees</p>
-            </div>
-            <div>
-              <p class="title-para">Kurtis</p>
-              <p>All Kurtis </p>
-              <p>Anarkali Kurtis</p>
-              <p>Rayon Kurtis</p>
-              <p>Cotton Kurtis</p>
-              <p>Embroidered Kurties</p>
-            </div>
-            <div>
-              <p class="title-para">Suits & Dress Material</p>
-              <p>All Suits & Dress Materials </p>
-              <p>Cotton Suits</p>
-              <p>Embroidered Suits</p>
-              <p>Chanderi Suits</p>
-            </div>
-            <div>
-              <p class="title-para">Other Ethnic</p>
-              <p>Blouses </p>
-              <p>Dupattas</p>
-              <p>Lehanga</p>
-              <p>Cotton Sarees</p>
-              <p>Gown</p>
-              <p>Ethnic Bottomwear</p>
-              <p>Embroidered Ethnic</p>
-            </div>
-            <div>
-              <p class="title-para">Kurta Sets</p>
-              <p>All Kurta Sets</p>
-              <p>All Indian </p>
-              <p>Kurta Embroidered Kurta</p>
-            </div> */}
           </article>
         </section>
       </Nav>

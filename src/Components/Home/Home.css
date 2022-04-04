@@ -24,26 +24,26 @@
   height: 360px;
   width: 100%;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 .product-name {
   font-size: 17px;
   font-weight: 500;
-  margin: 0 12px 10px;
+  margin: 0 12px 9px;
 }
 .mkt {
-  margin: 0 12px 10px;
+  margin: 0 12px 6px;
   font-size: 13px;
   color: rgb(88, 88, 88);
 }
 .price {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: bold;
-  margin: 0 12px 7px;
+  margin: 0 12px 6px;
   line-height: 160%;
 }
 .aprice {
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: line-through;
   font-weight: normal;
   color: rgb(88, 88, 88);
@@ -51,6 +51,7 @@
 }
 .discount {
   color: #038d63;
+  font-size: 17px;
 }
 .firstorder {
   color: rgb(95, 94, 94);
@@ -72,7 +73,7 @@
 }
 .rating span {
   background-color: #e8e9ea;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #666;
   border: 1px solid rgb(204, 204, 204);
