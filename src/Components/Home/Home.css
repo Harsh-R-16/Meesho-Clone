@@ -1,19 +1,25 @@
 #products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 1vw;
 }
 #products div {
-  width: 320px;
+  width: 310px;
+  margin: 0 10px;
   margin-bottom: 46px;
-  box-shadow: 1px 1px 6px 1px #a8a8a8;
+  box-shadow: 1px 1px 6px 1px #e3e3e3;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
   padding-bottom: 5px;
   background-color: #f9ffff;
+  transition: 01s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
+#products div:hover {
+  transform: scale(1.03);
+  box-shadow: 1px 1px 10px 1px #d0d0d0;
+}
 #products div .main-img {
   height: 360px;
   width: 100%;

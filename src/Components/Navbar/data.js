@@ -192,7 +192,7 @@ let data = [
       "Satin Sarees",
       "Embroidered",
     ],
-    ["Infrant 0-2 Years", "SOft Toys", "Footwear", "Stationary", "Watches"],
+    ["Infrant 0-2 Years", "Soft Toys", "Footwear", "Stationary", "Watches"],
     ["Boys", "Tshirts", "Cotton Suits", "Watches", "All Devices"],
     ["Girls", "Pins Girls", "Ethnic Toys", "Embroidered Ethnic"],
     ["Baby Cares", "All Cares", "Kurta Embroidered Kurta"],
