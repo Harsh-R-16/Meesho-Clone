@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { Nav } from "./Styled-Navbar";
 import { listItems, data } from "./data";
 import { allProducts } from "../../AllProducts";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./navbar.css";
 
 export default function Navbar() {
-  let navigate = useNavigate();
+  let count = useSelector((state) => state.count);
   let [index, setIndex] = useState(8);
   let [result, setResult] = useState([]);
   const mouseOver = (e) => {
@@ -164,7 +165,7 @@ export default function Navbar() {
           </Link>
           <Link to="/checkout">
             <p id="cart">
-              <span>1</span>
+              <span>{count}</span>
               <svg
                 id="cart"
                 xmlns="http://www.w3.org/2000/svg"

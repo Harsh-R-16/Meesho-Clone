@@ -1,9 +1,12 @@
 import React from "react";
 import { allProducts } from "../../AllProducts";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../Redux/action.js";
 
 export default function Product() {
   let { id } = useParams();
+  let dispatch = useDispatch();
   window.scrollTo(0, 0);
   let i;
   console.log(id);
@@ -12,7 +15,12 @@ export default function Product() {
       break;
     }
   }
-  console.log(allProducts[i]);
+
+  const clcHandler = (e) => {
+    dispatch(addToCart(e.target.id));
+  };
+
+  // console.log(allProducts[i]);
   let { img, name, soldBy, similar, sprice, aprice, rating, reviews, details } =
     allProducts[i];
   return (
@@ -82,6 +90,9 @@ export default function Product() {
           ))}
         </div>
       </article>
+      <button id={+id} onClick={clcHandler}>
+        Add to cart
+      </button>
     </section>
   );
 }
