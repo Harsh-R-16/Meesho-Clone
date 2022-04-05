@@ -3,6 +3,8 @@ import { Nav } from "./Styled-Navbar";
 import { listItems, data } from "./data";
 import { allProducts } from "../../AllProducts";
 import "./navbar.css";
+import { Link, useNavigate } from "react-router-dom";
+import styles from "../allstyles.module.css"
 
 export default function Navbar() {
   let article = document.querySelector("#search-results");
@@ -23,6 +25,12 @@ export default function Navbar() {
     };
   });
 
+  const navigate = useNavigate();
+
+  
+  const redirectToCheckout = () => {
+  navigate('/checkout/cart')
+}
   const inpHandler = (e) => {
     let newArr = [];
     for (let i = 0; i < allProducts.length; i++) {
@@ -119,6 +127,7 @@ export default function Navbar() {
           <p id="cart">
             <span>1</span>
             <svg
+              onClick={redirectToCheckout}
               id="cart"
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -130,7 +139,7 @@ export default function Navbar() {
               <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />{" "}
               <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />{" "}
             </svg>
-            Cart
+           {/* <Link className={styles.navLink} to='/cart'>Cart</Link> */}
           </p>
         </section>
         <section id="bottom" onMouseOver={mouseOver} onMouseOut={mouseOut}>

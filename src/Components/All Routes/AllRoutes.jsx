@@ -18,6 +18,7 @@ export default function AllRoutes() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/cart" element={<Cart />} /> */}
         <Route path="/products" element={<Products />} />
         <Route path="/product" element={<Product />} />
         <Route path="/profile" element={<Profile />} />
@@ -62,7 +63,7 @@ export default function AllRoutes() {
           }
         />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
