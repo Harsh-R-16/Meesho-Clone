@@ -18,8 +18,8 @@ export default function AllRoutes() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/products/:type" element={<Products />} />
+        <Route path="/products/:type/:id" element={<Product />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/supplier" element={<Supplier />} />
       </Routes>

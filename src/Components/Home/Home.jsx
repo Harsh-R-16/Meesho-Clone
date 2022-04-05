@@ -83,8 +83,8 @@ export default function Home() {
                       fill="#ffffff"
                       xmlns="http://www.w3.org/2000/svg"
                       ml="4"
-                      iconSize="10"
-                      class="Icon-sc-1iwi4w1-0 cePfda"
+                      iconsize="10"
+                      className="Icon-sc-1iwi4w1-0 cePfda"
                     >
                       <g clip-path="url(#star_svg__clip0)">
                         <path
@@ -107,8 +107,8 @@ export default function Home() {
                     height="24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    iconSize="20"
-                    class="Icon-sc-1iwi4w1-0 fjCWSO"
+                    iconsize="20"
+                    className="Icon-sc-1iwi4w1-0 fjCWSO"
                   >
                     <path fill="#fff" d="M0 0h62v24H0z"></path>
                     <path
