@@ -6,8 +6,8 @@ let arr = new Array(Math.floor(Math.random() * 500 + 1000));
 for (let i = 0; i < arr.length; i++) {
   arr[i] = i + 1;
 }
-export default function Products() {
-  let { type } = useParams();
+export function ProductS() {
+  let { subtype, type } = useParams();
   console.log(type);
   let navigate = useNavigate();
   let [products, setProducts] = useState([]);
@@ -27,21 +27,18 @@ export default function Products() {
     console.log(type);
     res.sort(() => Math.random() - 0.5);
     setProducts(res);
-  }, [type]);
+  }, [subtype]);
   // products.sort(() => Math.random() - 0.5);
   window.scrollTo(0, 0);
   // console.log(res);
   return (
     <main id="products-main">
-      <div id="sort-btns">
-        <p>Sort By: </p>
-        <button>Popularity</button>
-        <button>High to Low</button>
-        <button>Low to High</button>
-        <button>Discount</button>
-      </div>
       <h2>
-        Showing Products from <span>{type}</span> Category
+        Showing Products from{" "}
+        <span>
+          {type} / {subtype}
+        </span>{" "}
+        Category
       </h2>
       <section id="products">
         {products
@@ -141,7 +138,7 @@ export default function Products() {
             i <= index + 10 && (
               <button
                 onClick={() => setIndex(i + 1)}
-                className={i === index + 1 && "active-btn"}
+                style={{ color: i === index + 1 && "red" }}
               >
                 {" "}
                 {i}

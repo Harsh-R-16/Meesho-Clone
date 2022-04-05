@@ -21,7 +21,6 @@ export default function Navbar() {
     let article = document.querySelector("#search-results");
     if (e.target.parentElement.id === "search-results") {
       article.style.visibility = "visible";
-      navigate("/products/:id");
     } else {
       article.style.visibility = "hidden";
     }
@@ -40,7 +39,7 @@ export default function Navbar() {
     let newArr = [];
     for (let i = 0; i < allProducts.length; i++) {
       if (allProducts[i].name.toLowerCase().includes(e.target.value)) {
-        newArr.push(allProducts[i].name);
+        newArr.push(allProducts[i]);
       }
     }
     if (newArr.length && e.target.value) {
@@ -101,69 +100,86 @@ export default function Navbar() {
             </svg>
             <article id="search-results">
               {result.map((i, index) => (
-                <p id={index} key={index}>
-                  <svg
-                    width="18"
-                    height="18"
-                    className="DFW_E nT46U VETef"
-                    viewBox="0 0 32 32"
-                    version="1.1"
-                    aria-hidden="false"
-                  >
-                    <path d="M22 20c1.2-1.6 2-3.7 2-6 0-5.5-4.5-10-10-10S4 8.5 4 14s4.5 10 10 10c2.3 0 4.3-.7 6-2l6.1 6 1.9-2-6-6zm-8 1.3c-4 0-7.3-3.3-7.3-7.3S10 6.7 14 6.7s7.3 3.3 7.3 7.3-3.3 7.3-7.3 7.3z"></path>
-                  </svg>
-                  {i}
-                </p>
+                <Link to={`/product/${i.id}`}>
+                  <p id={index} key={index}>
+                    <svg
+                      width="18"
+                      height="18"
+                      className="DFW_E nT46U VETef"
+                      viewBox="0 0 32 32"
+                      version="1.1"
+                      aria-hidden="false"
+                    >
+                      <path d="M22 20c1.2-1.6 2-3.7 2-6 0-5.5-4.5-10-10-10S4 8.5 4 14s4.5 10 10 10c2.3 0 4.3-.7 6-2l6.1 6 1.9-2-6-6zm-8 1.3c-4 0-7.3-3.3-7.3-7.3S10 6.7 14 6.7s7.3 3.3 7.3 7.3-3.3 7.3-7.3 7.3z"></path>
+                    </svg>
+                    {i.name}
+                  </p>
+                </Link>
               ))}
             </article>
           </div>
-          <p id="mobile">
-            <img src="https://www.svgrepo.com/show/371405/mobile.svg" alt="" />
-            Download App
-            <div>
-              <p>Download From</p>
+          <a
+            target="_blank"
+            href="https://play.google.com/store/apps/details?id=com.meesho.supply&pid=pow_website&c=pow"
+            rel="noreferrer"
+          >
+            <p id="mobile">
               <img
-                src="https://images.meesho.com/images/pow/homepage/google-play-button.jpg"
+                src="https://www.svgrepo.com/show/371405/mobile.svg"
                 alt=""
               />
+              Download App
+              <div>
+                <p>Download From</p>
+                <img
+                  src="https://images.meesho.com/images/pow/homepage/google-play-button.jpg"
+                  alt=""
+                />
+                <img
+                  src="https://images.meesho.com/images/pow/homepage/appstore-button.jpg"
+                  alt=""
+                />
+              </div>
+            </p>
+          </a>
+          <p className="line">|</p>
+          <Link to="/supplier">
+            <p>Become a Supplier</p>
+          </Link>
+          <p className="line">|</p>
+          <Link to="/profile">
+            <p id="profile">
               <img
-                src="https://images.meesho.com/images/pow/homepage/appstore-button.jpg"
+                src="https://www.svgrepo.com/show/284856/profile-user.svg"
                 alt=""
               />
-            </div>
-          </p>
-          <p className="line">|</p>
-          <p>Become a Supplier</p>
-          <p className="line">|</p>
-          <p id="profile">
-            <img
-              src="https://www.svgrepo.com/show/284856/profile-user.svg"
-              alt=""
-            />
-            Profile
-            <div>
-              <h2>Hello User!</h2>
-              <p>to access your meesho account</p>
-              <button>SIGN UP</button>
-              <p>Go to Your Orders</p>
-            </div>
-          </p>
-          <p id="cart">
-            <span>1</span>
-            <svg
-              id="cart"
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              fill="currentColor"
-              className="bi bi-cart-check"
-              viewBox="0 0 16 16"
-            >
-              <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />{" "}
-              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />{" "}
-            </svg>
-            Cart
-          </p>
+              Profile
+              <div>
+                <h2>Hello User!</h2>
+                <p>to access your meesho account</p>
+                <button>SIGN UP</button>
+                <p>Go to Your Orders</p>
+              </div>
+            </p>
+          </Link>
+          <Link to="/checkout">
+            <p id="cart">
+              <span>1</span>
+              <svg
+                id="cart"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                className="bi bi-cart-check"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />{" "}
+                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />{" "}
+              </svg>
+              Cart
+            </p>
+          </Link>
         </section>
         <section id="bottom" onMouseOver={mouseOver} onMouseOut={mouseOut}>
           <ul>
@@ -181,7 +197,9 @@ export default function Navbar() {
                 {items.map((item, ind) => (
                   <Link to={`/products/${listItems[index]}`}>
                     <p key={ind} className={ind === 0 && "pink-para"}>
-                      {item}
+                      <Link to={`products/${listItems[index]}/${items[ind]}`}>
+                        {item}
+                      </Link>
                     </p>
                   </Link>
                 ))}
