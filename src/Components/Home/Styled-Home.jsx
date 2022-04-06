@@ -8,14 +8,24 @@ let Main = styled.main`
     grid-template-columns: 1fr 1fr;
     gap: 5vw;
     background-color: #f9f9f9;
+    @media (max-width: 1100px) {
+      grid-template-columns: 1fr;
+    }
 
     div {
       &:nth-of-type(1) {
         padding: 50px;
+        @media (max-width: 600px) {
+          padding: 50px 20px;
+        }
         h1 {
           font-size: 35px;
           line-height: 145%;
           letter-spacing: 2px;
+          @media (max-width: 600px) {
+            letter-spacing: 1px;
+            font-size: 23px;
+          }
         }
         p {
           background-color: #fff;
@@ -71,14 +81,21 @@ let Main = styled.main`
   #image-container {
     text-align: center;
     margin: 5px 3.4vw 10px;
+
     img {
       width: 100%;
       height: 75vh;
       margin-bottom: 6.5vh;
       border-radius: 10px;
+      @media (max-width: 700px) {
+        height: 400px;
+      }
 
       &:nth-of-type(4) {
         height: 300px;
+        @media (max-width: 1100px) {
+          height: 150px;
+        }
       }
     }
   }
@@ -103,6 +120,9 @@ let Main = styled.main`
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 1.6vw;
+    @media (max-width: 730px) {
+      justify-content: center;
+    }
     div {
       width: 310px;
       margin: 0 10px;
