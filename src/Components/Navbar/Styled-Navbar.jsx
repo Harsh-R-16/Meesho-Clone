@@ -172,7 +172,7 @@ button{
       color: #000;
       
       ul {
-      padding: 0px 2.8vw;
+      padding: 0px 2.7vw;
       border-bottom: 1px solid #dfdfdf;
       display: flex;
       align-items: center;
@@ -183,18 +183,10 @@ button{
         text-decoration: none;color:inherit
       }
 
-      li:nth-of-type(1) {
-        flex-grow: 0;
-        padding-right: 1.3vw;
-      }
-      li:nth-of-type(9) {
-        flex-grow: 0;
-        padding-left: 1.3vw;
-      }
-      li {
+     li {
         flex-grow: 1;
         font-size: 15px;
-        padding: 17px 0;
+        padding: 17px 2px;
         text-align: center;
         cursor:pointer        
       }
