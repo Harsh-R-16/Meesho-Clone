@@ -41,7 +41,7 @@ export default function Drawer() {
           <Divider />
           <CartItem />
           <Divider/>
-          <Button sx={{
+          <Button sx={{ 
               backgroundColor: '#F43397',
               width: "80%",
               marginLeft: '40px',
