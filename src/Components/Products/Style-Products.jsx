@@ -24,9 +24,9 @@ let Main = styled.main`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 1.9vw 20px;
+    padding: 0 2vw 20px;
     div {
-      width: 305px;
+      width: 300px;
       margin: 0 10px;
       margin-bottom: 50px;
       box-shadow: 1px 1px 6px 1px #e3e3e3;
@@ -92,20 +92,18 @@ let Main = styled.main`
       align-items: center;
       font-size: 12px;
       span {
-        background-color: #e8e9ea;
         font-size: 15px;
         font-weight: 500;
-        color: #666;
-        border: 1px solid rgb(204, 204, 204);
+        color: #fff;
         border-radius: 5px;
         display: flex;
         align-items: center;
         width: fit-content;
-        padding: 5px 10px;
+        padding: 5.5px 11px;
         margin-right: 9px;
       }
       svg {
-        margin-left: 5px;
+        margin-left: 7px;
       }
     }
     .meesho-trust {
