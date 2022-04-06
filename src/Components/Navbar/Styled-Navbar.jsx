@@ -144,7 +144,7 @@ button{
     .line {
       color: #b9b9b9;
       transform: scaleY(2.5);
-      margin: 0 6px;
+      margin: 0 4px;
     }
 
     #cart svg {

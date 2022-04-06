@@ -2,38 +2,63 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { allProducts } from "../../AllProducts";
 import "./products.css";
-let arr = new Array(Math.floor(Math.random() * 500 + 1000));
+import { Main } from "./Style-Products";
+let arr = new Array(Math.floor(Math.random() * 1000 + 2000));
 for (let i = 0; i < arr.length; i++) {
   arr[i] = i + 1;
 }
+let total = Math.round(Math.random() * 1000 + 4526);
+let res;
 export default function Products() {
   let { type } = useParams();
-  console.log(type);
+  // console.log(type);
   let navigate = useNavigate();
   let [products, setProducts] = useState([]);
   let [index, setIndex] = useState(0);
   useEffect(() => {
-    arr = new Array(Math.floor(Math.random() * 500 + 1000));
+    total = Math.round(Math.random() * 1000 + 4526);
+    arr = new Array(Math.floor(Math.random() * 1000 + 2000));
     for (let i = 0; i < arr.length; i++) {
       arr[i] = i + 1;
     }
     setIndex(0);
-    let res = [];
+    res = [];
     for (let i = 0; i < allProducts.length; i++) {
       if (allProducts[i].type === type) {
         res.push(allProducts[i]);
       }
     }
-    console.log(type);
+    // console.log(type);
     res.sort(() => Math.random() - 0.5);
     setProducts(res);
+    document.querySelectorAll("#sort-btns button").forEach((btn) => {
+      btn.classList.remove("active-btn");
+    });
   }, [type]);
-  // products.sort(() => Math.random() - 0.5);
   window.scrollTo(0, 0);
-  // console.log(res);
+  const sortingBtns = (e) => {
+    setIndex(0);
+    let btns = e.currentTarget.querySelectorAll("button");
+    btns.forEach((btn) => {
+      if (btn.innerHTML === e.target.innerHTML) btn.classList.add("active-btn");
+      else btn.classList.remove("active-btn");
+    });
+    let newArr = [...res];
+    if (e.target.innerHTML === "Popularity") {
+      newArr.sort((a, b) => b.rating - a.rating);
+    } else if (e.target.innerHTML === "Low to High") {
+      newArr.sort((a, b) => a.sprice - b.sprice);
+    } else if (e.target.innerHTML === "High to Low") {
+      newArr.sort((a, b) => b.sprice - a.sprice);
+    } else if (e.target.innerHTML === "Discount") {
+      newArr.sort((b, a) => b.sprice / b.aprice - a.sprice / a.aprice);
+      console.log(newArr);
+    }
+    setProducts(newArr);
+  };
   return (
-    <main id="products-main">
-      <div id="sort-btns">
+    <Main>
+      <div id="sort-btns" onClick={sortingBtns}>
         <p>Sort By: </p>
         <button>Popularity</button>
         <button>High to Low</button>
@@ -41,8 +66,15 @@ export default function Products() {
         <button>Discount</button>
       </div>
       <h2>
-        Showing Products from <span>{type}</span> Category
+        Showing Products from <span>{type}</span> Category:
       </h2>
+      <p>
+        Showing{" "}
+        <span>
+          {index * 16 + 1} - {index * 16 + 16}
+        </span>{" "}
+        out of <span>{total}</span> Products
+      </p>
       <section id="products">
         {products
           .slice((index % 5) * 16, (index % 5) * 16 + 16)
@@ -134,13 +166,17 @@ export default function Products() {
           )}
       </section>
       <div id="nav-buttons">
-        {index !== 0 && <button className="btns">Previous</button>}
+        {index !== 0 && (
+          <button className="btns" onClick={() => setIndex((i) => i - 1)}>
+            Previous
+          </button>
+        )}
         {arr.map(
           (i) =>
-            i >= index &&
+            i > index &&
             i <= index + 10 && (
               <button
-                onClick={() => setIndex(i + 1)}
+                onClick={() => setIndex(i - 1)}
                 className={i === index + 1 && "active-btn"}
               >
                 {" "}
@@ -152,6 +188,6 @@ export default function Products() {
           Next
         </button>
       </div>
-    </main>
+    </Main>
   );
 }

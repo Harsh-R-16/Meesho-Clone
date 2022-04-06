@@ -53,7 +53,7 @@ export default function Home() {
 
       <section id="products">
         {products
-          .slice(0, 100)
+          .slice(0, 80)
           .map(
             (
               { img, name, soldBy, sprice, aprice, rating, reviews, id },
