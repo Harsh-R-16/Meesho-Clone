@@ -8,9 +8,9 @@ let Section = styled.section`
   );
   min-height: 75vh;
   height: fit-content;
-  padding: 40px;
+  padding: 50px 3vw;
   div {
-    width: 90%;
+    width: 100%;
     margin: 0px auto;
     max-width: 440px;
     border-radius: 10px;
@@ -24,7 +24,7 @@ let Section = styled.section`
     h2 {
       text-align: center;
       font-size: 20px;
-      margin: 20px 0;
+      margin: 20px 10px;
     }
     p {
       padding: 0 20px;

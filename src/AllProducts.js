@@ -198,7 +198,7 @@ let allProducts = [
     id: 5,
     sprice: 392,
     aprice: 450,
-    rating: 52,
+    rating: 4.5,
     reviews: 45,
     img: "https://images.meesho.com/images/products/40939196/zb2az_512.jpg",
     similar: [

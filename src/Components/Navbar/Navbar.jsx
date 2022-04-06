@@ -165,7 +165,7 @@ export default function Navbar() {
               </div>
             </p>
           </Link>
-          <Link to="/checkout">
+          <Link to={name === "User" ? "/profile" : "/checkout"}>
             <p id="cart">
               <span>{count}</span>
               <svg
