@@ -1,0 +1,38 @@
+.form_main_div {
+  background-color: white;
+  width: 33vw;
+  z-index: 200;
+  box-shadow: 10px grey;
+}
+.supplier_form_text_field {
+  margin-left: 3%;
+}
+.supplier_form_passwrd_field_info {
+  display: flex;
+}
+.supplier_form_space {
+  min-height: 8rem;
+}
+.supplier_create_account {
+  position: relative;
+  left: 6%;
+}
+.supplier_form_checkbox {
+  position: relative;
+  left: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.supplier_form_whasapp_image {
+  background-image: url("./WhatsApp_logo.png");
+  min-height: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.supplier_form_last_text {
+  font-size: 11px;
+  margin-left: 9%;
+}
+.pink-text {
+  color: rgb(182, 50, 105);
+}
