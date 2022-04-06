@@ -8,11 +8,13 @@ import "./navbar.css";
 
 export default function Navbar() {
   let count = useSelector((state) => state.count);
+  let name = useSelector((state) => state.name);
   let [index, setIndex] = useState(8);
   let [result, setResult] = useState([]);
   const mouseOver = (e) => {
     e.currentTarget.classList.add("height");
   };
+  console.log(name);
 
   const mouseOut = (e) => {
     e.currentTarget.classList.remove("height");
@@ -156,7 +158,7 @@ export default function Navbar() {
               />
               Profile
               <div>
-                <h2>Hello User!</h2>
+                <h2>Hello {name}!</h2>
                 <p>to access your meesho account</p>
                 <button>SIGN UP</button>
                 <p>Go to Your Orders</p>

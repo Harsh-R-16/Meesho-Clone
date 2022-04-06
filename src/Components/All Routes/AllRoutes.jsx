@@ -10,6 +10,7 @@ import Address from "../Address/Address";
 import Payment from "../Payment/Payment";
 import Summary from "../Summary/Summary";
 import Profile from "../Profile/Profile";
+import Login from "../Profile/Login";
 import Supplier from "../Supplier/Supplier";
 import Footer from "../Footer/Footer";
 
@@ -23,6 +24,7 @@ export default function AllRoutes() {
         <Route path="/products/:type/:subtype" element={<ProductS />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/supplier" element={<Supplier />} />
       </Routes>
       <Routes>

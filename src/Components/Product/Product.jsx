@@ -1,28 +1,32 @@
 import React from "react";
 import { allProducts } from "../../AllProducts";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../Redux/action.js";
 import ratingImg from "./rating.png";
 import "./product.css";
+let i;
 
 export default function Product() {
   let { id } = useParams();
+  let [state, setState] = React.useState("Add to Cart");
+  let cart = useSelector((state) => state.cart);
   let dispatch = useDispatch();
   window.scrollTo(0, 0);
-  let i;
   console.log(id);
   for (i = 0; i < allProducts.length; i++) {
     if (allProducts[i].id === +id) {
       break;
     }
   }
+  if (cart.includes(+id)) state = "Already in the Cart";
 
   const clcHandler = (e) => {
     dispatch(addToCart(e.target.id));
+    if (state === "Add to Cart") setState("Already in the Cart");
   };
 
-  // console.log(allProducts[i]);
+  console.log(allProducts[i], i);
   let { img, name, soldBy, similar, sprice, aprice, rating, reviews, details } =
     allProducts[i];
   return (
@@ -35,7 +39,7 @@ export default function Product() {
       <article id="product-article-2">
         <img src={img} alt="" id="main-img" />
         <button id={+id} onClick={clcHandler}>
-          Add to cart
+          {state}
         </button>
         <hr />
         <p>Similar products</p>
