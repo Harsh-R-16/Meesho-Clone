@@ -1,0 +1,50 @@
+#products-main {
+  /* border: 1px solid red; */
+  margin: 50px 2.8vw;
+}
+#products-main h2 {
+  margin: 10px 1vw 50px;
+  font-size: 14.5px;
+  font-weight: normal;
+}
+h2 span {
+  font-size: 19px;
+  font-weight: bold;
+  color: #f43397;
+}
+#nav-buttons {
+  text-align: center;
+}
+#nav-buttons button {
+  border: none;
+  background-color: #fff;
+  margin: 3px 4px;
+  border-radius: 50%;
+  height: 34px;
+  aspect-ratio: 1;
+  font-weight: 500;
+  font-size: 16px;
+}
+.active-btn {
+  background-color: #f43397 !important;
+  color: #fff;
+}
+.btns {
+  color: #f43397;
+  margin: 0 15px !important;
+}
+#sort-btns {
+  width: fit-content;
+  float: right;
+  display: flex;
+}
+#sort-btns button {
+  background-color: #fff;
+  color: #f43397;
+  border: 1px solid #f43397;
+  padding: 5px 10px;
+  font-size: 11px;
+  margin: 0 10px;
+  border-radius: 4px;
+  font-weight: 500;
+}

@@ -1,8 +1,13 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { increaseStep } from "../../Redux/action";
 import styles from '../allstyles.module.css'
 
-function ProductPricing() {
+function ProductPricing({ title, handleClick }) {
+  const dispatch=useDispatch()
+    const navigate=useNavigate()
   return (
     <div className={styles.cartRightSide}>
     <table className={styles.table}>
@@ -36,8 +41,10 @@ function ProductPricing() {
       </tfoot>
     </table>
     
-    <Button sx={{backgroundColor:'#F43397',border:'none',padding:'10px' ,width:'100%',m:2}}
-    variant="contained">Continue</Button>
+    <Button sx={{backgroundColor:'#F43397',width:'300px',border:'none',padding:'10px' ,m:2}}
+        variant="contained" onClick={handleClick}>{title}</Button>
+          
+          <img src="https://images.meesho.com/images/marketing/1588578650850.png" width="300px" alt="img"/>
   </div>
   )
 }

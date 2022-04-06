@@ -5,7 +5,10 @@
   letter-spacing: 1.1px;
   font-family: "Ubuntu", sans-serif !important;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 6px;

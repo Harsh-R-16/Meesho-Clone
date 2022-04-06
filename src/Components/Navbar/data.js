@@ -4,7 +4,7 @@ let listItems = [
   "Jewellery & Accessories",
   "Men",
   "Beauty & Health",
-  "Bags and Footwear",
+  "Bags & Footwear",
   "Home & Kitchen",
   "Kids",
   "Electronics",

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Home from "../Home/Home";
 import Products from "../Products/Products";
+import { ProductS } from "../Products/Productss";
 import Product from "../Product/Product";
 import Checkout from "../Checkout/Checkout";
 import Cart from "../Cart/Cart";
@@ -21,6 +22,10 @@ export default function AllRoutes() {
         {/* <Route path="/cart" element={<Cart />} /> */}
         <Route path="/products" element={<Products />} />
         <Route path="/product" element={<Product />} />
+
+        <Route path="/products/:type" element={<Products />} />
+        <Route path="/products/:type/:subtype" element={<ProductS />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/supplier" element={<Supplier />} />
       </Routes>
