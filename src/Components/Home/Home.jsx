@@ -12,7 +12,7 @@ import { FaStar } from "react-icons/fa";
 export default function Home() {
   let products = [...allProducts];
   products.sort(() => Math.random() - 0.5);
-  console.log(allProducts);
+  // console.log(allProducts);
   return (
     <Main>
       <section id="homepage">
