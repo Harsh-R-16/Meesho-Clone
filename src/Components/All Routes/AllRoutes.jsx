@@ -12,6 +12,7 @@ import Profile from "../Profile/Profile";
 import Login from "../Profile/Login";
 import Supplier from "../Supplier/Supplier";
 import Footer from "../Footer/Footer";
+import Checkout from "../Checkout/Checkout";
 
 export default function AllRoutes() {
   return (
@@ -29,12 +30,18 @@ export default function AllRoutes() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/supplier" element={<Supplier />} />
-        <Route path="/checkout/cart" element={<Cart />} />
+      </Routes>
+       <Checkout/>
+      <Routes>
+      
+         <Route path="/checkout/cart" element={<Cart />} />
         <Route path="/checkout/address" element={<Address />} />
         <Route path="/checkout/payment" element={<Payment />} />
-        <Route path="/checkout/summary" element={<Summary />} />{" "}
+        <Route path="/checkout/summary" element={<Summary />} />
+      
       </Routes>
-      {/* <Footer /> */}
+
+      <Footer /> 
     </>
   );
 }

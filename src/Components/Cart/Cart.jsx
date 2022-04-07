@@ -1,8 +1,41 @@
 import { Button } from "@mui/material";
 import React from "react";
+
+// import styles from '../allstyles.module.css'
+// import CartItem from "./CartItem";
+// import ProductPricing from "./ProductPricing";
+// import { allProducts } from "../../AllProducts";
+// import { useNavigate } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+// import { increaseStep } from "../../Redux/action";
+// export default function Cart() {
+//   const cart = localStorage.getItem('cart')
+//   const navigate = useNavigate()
+//   const dispatch=useDispatch()
+//   const handleClick = (e) => {
+//     dispatch(increaseStep())
+//     navigate('/checkout/address')
+//   }
+//   console.log("cart->", cart)
+//   return (
+//     <div className={styles.cartDiv}>
+//       <div className={styles.cartSec}>
+//         <div className={styles.cartLeftp1}>
+//         <strong> Cart </strong>   | 1 item   
+//         </div>
+//       <CartItem/>
+//       </div>
+//       <hr style={{margin:'0px 20px'}} />
+//       <ProductPricing title='Continue' handleClick={handleClick} />
+      
+//     </div>
+//   )
+// =======
 import "./cart.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { allProducts } from "../../AllProducts";
+import { useNavigate } from "react-router-dom";
+import { increaseStep } from "../../Redux/action";
 let arr = [
   Math.floor(Math.random() * 20) + 7,
   Math.floor(Math.random() * 20) + 7,
@@ -47,6 +80,12 @@ export default function Cart() {
     console.log(newData);
   };
 
+  const dispatch = useDispatch()
+  const navigate=useNavigate()
+  const handleClick = () => {
+    dispatch(increaseStep())
+    navigate('/checkout/address')
+  }
   return (
     <main id="cart-main">
       <section>
@@ -126,7 +165,7 @@ export default function Cart() {
               )}
             </span>
           </p>
-          <button>
+          <button onClick={handleClick}>
             PROCEED TO PAY Rs.{" "}
             {Math.round(
               cartData.reduce((acc, cur) => acc + cur.tsprice, 0) * 0.7
@@ -145,4 +184,6 @@ export default function Cart() {
       </section>
     </main>
   );
+
 }
+

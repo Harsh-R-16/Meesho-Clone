@@ -32,6 +32,8 @@ function ProductPricing({ title, handleClick }) {
 <td>₹100</td>
         </tr>
       </tbody>
+      {/* <hr /> */}
+
       <hr />
       <tfoot>
         <tr>

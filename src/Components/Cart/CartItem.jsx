@@ -1,3 +1,5 @@
+import { Divider } from '@mui/material'
+
 import React from 'react'
 import { useState } from 'react'
 import styles from "../allstyles.module.css"
@@ -11,10 +13,20 @@ const [qty,setQty]=useState(1)
     <div className={styles.itemDiv} >
       <img src="https://images.meesho.com/images/products/30839757/fqcds_512.jpg" alt="product"  height="75px" width="60px"   />
       <div className={styles.middleItemDiv}>
+
+        <div>
+           <h4>Ethnics</h4>
+        <p>Quantity :{qty}</p>
+        <p>₹2000</p>
+        </div>
+       
+    
+
         <h4>Ethnics</h4>
         <p>Quantity :{qty}</p>
         <p>₹2000</p>
      
+
         <div>Supplier : Pathan Brothers</div>
       </div>
 

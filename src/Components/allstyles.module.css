@@ -4,11 +4,12 @@ color:black
 }
 
 .checkoutNav{
+
     /* display:flex;
     align-items: center;
     justify-content: space-evenly; */
     width: 700px;
-    margin-top: 300px auto;
+
 
 }
 
@@ -18,10 +19,11 @@ color:black
 }
 
 
+
 .cartDiv,.address{
     display: grid;
    grid-template-columns: 45% 50%;
-   gap: 10px;
+gap: 10px;
     /* align-items: center;
     justify-content: space-between; */
  width: 80%; 
@@ -32,6 +34,24 @@ color:black
 .cartLeftp1{
     display: flex;
     align-items: center;
+    margin: 30px;
+}
+
+.cartLeftp1 strong{
+margin-right:15px ;
+}
+
+
+.table th,td{
+    padding:8px 35px;
+   color:#666666
+
+}
+
+
+
+
+
 }
 
 .table th,td{
@@ -46,6 +66,7 @@ color:black
     justify-content: center;
     align-items: center;
     border: 0.5px solid rgba(128, 128, 128, 0.267);
+
 }
 
 .middleItemDiv{
@@ -83,6 +104,8 @@ margin-left: 100px;
 
 .stepsbox{
     width: 600px;
+   margin-top: 20px;
+ /* margin-left: 300px; */
   margin: 30px auto;
   margin-left: 300px;
 }
@@ -92,5 +115,40 @@ margin-left: 100px;
     margin: 5px;
 }
 
+
+.drawerItem{
+margin: 20px;
+display: grid;
+grid-template-columns: 20% 55% 20%;
+}
+
+.drawerQty{
+    display: flex;
+    margin: 10px 0px;
+
+}
+
+.drawerQty *{
+    margin-right: 5px;
+}
+
+.payMiddle{
+    display: flex;
+    background-color: #E7EEFF;
+    justify-content: space-between;
+   width:300px;
+    padding:15px 5px;
+    margin:20px 0px
+    
+}
+
+.pay1{
+  /* border: 3px solid black;
+  display: flex;
+  flex-direction: column; */
+ padding-left: 160px;
+ padding-top: 20px;
+ 
+}
 
 

@@ -1,4 +1,7 @@
-import { ADD_TO_CART, ADD_NAME } from "./action";
+// <<<<<<< HEAD
+import { ADD_TO_CART, INCREASE_STEP, SAVE_ADDRESS, ADD_NAME } from "./action";
+// =======
+// import { ADD_TO_CART } from "./action";
 
 export const reducer = (store, action) => {
   switch (action.type) {
@@ -11,6 +14,20 @@ export const reducer = (store, action) => {
         count: temp.length,
         cart: temp,
       };
+// <<<<<<< HEAD
+    
+    case INCREASE_STEP:
+      return {
+        ...store,
+        step: store.step + 1
+      }
+    case SAVE_ADDRESS:
+      return {
+        ...store,
+       address:action.payload
+      }
+
+// =======
     case ADD_NAME:
       console.log(action);
       return {
