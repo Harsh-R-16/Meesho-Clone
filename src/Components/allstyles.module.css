@@ -1,154 +1,124 @@
-.navLink{
-text-decoration: none;
-color:black
+.navLink {
+  text-decoration: none;
+  color: black;
 }
 
-.checkoutNav{
-
-    /* display:flex;
+.checkoutNav {
+  /* display:flex;
     align-items: center;
     justify-content: space-evenly; */
-    width: 700px;
-
-
+  width: 700px;
 }
 
-.logodiv{
-    margin-top: -30px;
-    padding: 10px;
-}
-
-
-
-.cartDiv,.address{
-    display: grid;
-   grid-template-columns: 45% 50%;
-gap: 10px;
-    /* align-items: center;
-    justify-content: space-between; */
- width: 80%; 
-    margin: auto;
-     /* border: 1px solid black;  */
-}
-
-.cartLeftp1{
-    display: flex;
-    align-items: center;
-    margin: 30px;
-}
-
-.cartLeftp1 strong{
-margin-right:15px ;
-}
-
-
-.table th,td{
-    padding:8px 35px;
-   color:#666666
-
-}
-
-
-
-
-
-}
-
-.table th,td{
-    padding:8px 25px;
-   
-
-}
-
-.itemDiv{
-    display:flex;
-;
-    justify-content: center;
-    align-items: center;
-    border: 0.5px solid rgba(128, 128, 128, 0.267);
-
-}
-
-.middleItemDiv{
-    margin-left: 40px;
-}
-.cartRightSide{
-margin-left: 100px;
-
-}
-
-.addressHead{
-    display: flex;
-    margin: 35px 0px;
-}
-
-.form{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 30px;
-    border: 0.5px solid rgba(128, 128, 128, 0.267);
-    border-radius: 10px;
-
-}
-
-.cityDiv{
-    display: flex;
-}
-
-/* .input{
+.logodiv {
+  margin-top: -30px;
   padding: 10px;
-  margin: 50px;
-  margin-bottom: 100px;
-} */
-
-.stepsbox{
-    width: 600px;
-   margin-top: 20px;
- /* margin-left: 300px; */
-  margin: 30px auto;
-  margin-left: 300px;
 }
 
-
-.middleItemDiv *{
-    margin: 5px;
+.cartDiv,
+.address {
+  display: grid;
+  grid-template-columns: 45% 50%;
+  gap: 10px;
+  /* align-items: center;
+    justify-content: space-between; */
+  width: 80%;
+  margin: auto;
+  /* border: 1px solid black;  */
 }
 
-
-.drawerItem{
-margin: 20px;
-display: grid;
-grid-template-columns: 20% 55% 20%;
+.cartLeftp1 {
+  display: flex;
+  align-items: center;
+  margin: 30px;
 }
 
-.drawerQty{
-    display: flex;
-    margin: 10px 0px;
-
+.cartLeftp1 strong {
+  margin-right: 15px;
 }
 
-.drawerQty *{
-    margin-right: 5px;
+.table th,
+td {
+  padding: 8px 35px;
+  color: #666666;
 }
 
-.payMiddle{
-    display: flex;
-    background-color: #E7EEFF;
-    justify-content: space-between;
-   width:300px;
-    padding:15px 5px;
-    margin:20px 0px
-    
+.table th,
+td {
+  padding: 8px 25px;
 }
 
-.pay1{
+.itemDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid rgba(128, 128, 128, 0.267);
+}
+
+.middleItemDiv {
+  margin-left: 40px;
+}
+.cartRightSide {
+  margin-left: 100px;
+}
+
+.addressHead {
+  display: flex;
+  margin: 35px 0px;
+}
+
+.form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  border: 0.5px solid rgba(128, 128, 128, 0.267);
+  border-radius: 10px;
+}
+
+.cityDiv {
+  display: flex;
+}
+
+.stepsbox {
+  width: 600px;
+  margin-top: 20px;
+  margin: 30px auto 0;
+  margin-left: 30vw;
+}
+
+.middleItemDiv * {
+  margin: 5px;
+}
+
+.drawerItem {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 20% 55% 20%;
+}
+
+.drawerQty {
+  display: flex;
+  margin: 10px 0px;
+}
+
+.drawerQty * {
+  margin-right: 5px;
+}
+
+.payMiddle {
+  display: flex;
+  background-color: #e7eeff;
+  justify-content: space-between;
+  width: 300px;
+  padding: 15px 5px;
+  margin: 20px 0px;
+}
+
+.pay1 {
   /* border: 3px solid black;
   display: flex;
   flex-direction: column; */
- padding-left: 160px;
- padding-top: 20px;
- 
+  padding-left: 160px;
+  padding-top: 20px;
 }
-
-

@@ -4,15 +4,6 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import CartItem from './CartItem';
-import styles from '../allstyles.module.css'
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
 
 
 export default function Drawer() {
@@ -40,7 +31,6 @@ export default function Drawer() {
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 550 }}
       role="presentation"
-      // onClick={toggleDrawer(anchor, false)}
 
 
   const list = (anchor) => (
@@ -120,4 +110,4 @@ export default function Drawer() {
       }
     </div>
   );
-}
+
