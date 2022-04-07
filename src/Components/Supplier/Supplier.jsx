@@ -6,6 +6,7 @@ import img3 from "./main-img-3.png";
 import img4 from "./main-img-4.png";
 import img5 from "./main-img-5.png";
 import numimg from "./numbers.png";
+import SupplierForm from "./SupplierForm";
 import "./supplier.css";
 let images = [img1, img1, img2, img3, img4, img5];
 let data = [
@@ -42,6 +43,7 @@ let data = [
 ];
 export default function Supplier() {
   let [ind, setInd] = React.useState(0);
+  let [show, setShow] = React.useState(true);
   return (
     <>
       <main id="supplier-navigation">
@@ -71,25 +73,33 @@ export default function Supplier() {
             <p onClick={() => setInd(5)}>Grow Business</p>
           </div>
           <button>Login</button>
-          <button>Start Selling</button>
+          <button onClick={() => setShow(!show)}>Start Selling</button>
         </nav>
         <h1>Meesho Supplier Page</h1>
       </main>
-      <article id="supplier-form">
-        <div>
-          {" "}
-          <h1>
-            {data[ind][0]} <span>{data[ind][1]}</span>
-          </h1>
-          <p style={{ lineHeight: "150%", fontSize: "14px" }}>{data[ind][2]}</p>
-          <p id="form-para">
-            +91 <input type="text" placeholder="Enter Your Mobile Number" />{" "}
-            <button>Start Selling</button>
-          </p>
-        </div>
-        <img src={images[ind]} alt="" />
-      </article>
-      <img src={numimg} alt="" />
+      {show ? (
+        <>
+          <article id="supplier-form">
+            <div>
+              {" "}
+              <h1>
+                {data[ind][0]} <span>{data[ind][1]}</span>
+              </h1>
+              <p style={{ lineHeight: "150%", fontSize: "14px" }}>
+                {data[ind][2]}
+              </p>
+              <p id="form-para">
+                +91 <input type="text" placeholder="Enter Your Mobile Number" />{" "}
+                <button>Start Selling</button>
+              </p>
+            </div>
+            <img src={images[ind]} alt="" />
+          </article>
+          <img src={numimg} alt="" />{" "}
+        </>
+      ) : (
+        <SupplierForm />
+      )}
     </>
   );
 }
