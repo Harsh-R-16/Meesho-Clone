@@ -18,7 +18,7 @@ color:black
 }
 
 
-.cartDiv,.address{
+.cartDiv,.address,.paymentDiv{
     display: grid;
    grid-template-columns: 45% 0.1% 50%;
    gap: 10px;
@@ -119,4 +119,24 @@ grid-template-columns: 20% 55% 20%;
 .drawerQty *{
     margin-right: 5px;
 }
+
+.payMiddle{
+    display: flex;
+    background-color: #E7EEFF;
+    justify-content: space-between;
+   width:300px;
+    padding:15px 5px;
+    margin:20px 0px
+    
+}
+
+.pay1{
+  /* border: 3px solid black;
+  display: flex;
+  flex-direction: column; */
+ padding-left: 160px;
+ padding-top: 20px;
+ 
+}
+
 
