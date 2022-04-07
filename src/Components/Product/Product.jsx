@@ -17,6 +17,7 @@ export default function Product() {
   }
 
   const clcHandler = (e) => {
+    console.log(e)
     dispatch(addToCart(e.target.id));
   };
 

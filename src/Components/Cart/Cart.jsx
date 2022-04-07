@@ -20,11 +20,11 @@ export default function Cart() {
     <div className={styles.cartDiv}>
       <div className={styles.cartSec}>
         <div className={styles.cartLeftp1}>
-         Cart | 1 item   
+        <strong> Cart </strong>   | 1 item   
         </div>
       <CartItem/>
       </div>
-      {/* <hr /> */}
+      <hr style={{margin:'0px 20px'}} />
       <ProductPricing title='Continue' handleClick={handleClick} />
       
     </div>
