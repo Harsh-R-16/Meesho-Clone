@@ -7,11 +7,12 @@ import img4 from "./Images/img4.png";
 import { allProducts } from "../../AllProducts";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import { FaStar } from "react-icons/fa";
 
 export default function Home() {
   let products = [...allProducts];
   products.sort(() => Math.random() - 0.5);
-  console.log(allProducts);
+  // console.log(allProducts);
   return (
     <Main>
       <section id="homepage">
@@ -50,10 +51,9 @@ export default function Home() {
         <h1>Top Products for You!!!</h1>
         <hr />
       </div>
-
       <section id="products">
         {products
-          .slice(0, 100)
+          .slice(0, 80)
           .map(
             (
               { img, name, soldBy, sprice, aprice, rating, reviews, id },
@@ -79,30 +79,13 @@ export default function Home() {
                     ₹{Math.floor(Math.random() * 150)} discount on 1st order
                   </p>
                   <p className="rating">
-                    <span>
-                      {rating}{" "}
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 20 20"
-                        fill="#ffffff"
-                        xmlns="http://www.w3.org/2000/svg"
-                        ml="4"
-                        iconsize="10"
-                        className="Icon-sc-1iwi4w1-0 cePfda"
-                      >
-                        <g clip-path="url(#star_svg__clip0)">
-                          <path
-                            d="M19.54 6.85L13.62 5.5 10.51.29a.596.596 0 00-1.02 0L6.38 5.5.46 6.85a.599.599 0 00-.31.98l3.99 4.57-.55 6.04c-.02.21.07.41.24.54.17.12.39.15.59.07L10 16.64l5.58 2.39c.08.03.16.05.23.05h.01c.3.01.6-.26.6-.6 0-.06-.01-.12-.03-.17l-.54-5.93 3.99-4.57c.14-.16.18-.38.12-.58a.544.544 0 00-.42-.38z"
-                            fill="#666"
-                          ></path>
-                        </g>
-                        <defs>
-                          <clipPath id="star_svg__clip0">
-                            <path fill="#fff" d="M0 0h20v19.08H0z"></path>
-                          </clipPath>
-                        </defs>
-                      </svg>
+                    <span
+                      style={{
+                        backgroundColor:
+                          rating >= 3.5 ? " #23bb75" : "rgb(244, 182, 25) ",
+                      }}
+                    >
+                      {rating} <FaStar color="#fff" />
                     </span>{" "}
                     {reviews} Reviews
                   </p>

@@ -8,6 +8,13 @@ let Foot = styled.footer`
     display: grid;
     grid-template-columns: 3fr 4fr 4fr;
     gap: 15px;
+
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 850px) {
+      grid-template-columns: 1fr;
+    }
     #div-1 {
       grid-template-columns: 1fr;
       h1 {
@@ -81,7 +88,7 @@ let Foot = styled.footer`
   #section-2 {
     border: 1px solid #cac9c9;
     background-color: #fff;
-    padding: 1.1vw;
+    padding: 15px;
     border-radius: 7px;
     h4 {
       font-size: 22px;

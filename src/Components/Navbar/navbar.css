@@ -19,3 +19,43 @@
 .pink-para:hover {
   color: #f43397 !important;
 }
+@media (max-width: 1230px) {
+  #bottom li,
+  #top p {
+    font-size: 13px !important;
+  }
+}
+@media (max-width: 1040px) {
+  #bottom li,
+  #top p {
+    font-size: 9.5px !important;
+  }
+  #top p {
+    margin: 0 5px !important;
+  }
+}
+@media (max-width: 800px) {
+  #bottom,
+  #top p {
+    display: none !important;
+  }
+  #top {
+    padding-right: 33px !important;
+  }
+  #top #logo {
+    width: 80px;
+  }
+}
+
+#hidden-menu-open {
+  position: fixed;
+  top: 26px;
+  right: 6px;
+  font-size: 23px;
+  z-index: 10;
+}
+@media (min-width: 800px) {
+  #hidden-menu-open {
+    display: none;
+  }
+}

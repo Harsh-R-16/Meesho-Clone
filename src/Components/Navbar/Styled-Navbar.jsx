@@ -53,10 +53,13 @@ let Nav = styled.nav`
         overflow-y: scroll;
         box-shadow: 1px 1px 6px 1px #b9b9b9;
         visibility: hidden;
+        @media(max-width: 550px){
+          grid-template-columns: 1fr
+        }
       p {
           padding: 8px 14px;
           font-size: 13px !important;
-          margin: 0 !important;
+          margin: 0 !important;display:block !important;
           svg {
             margin-right: 9px;
           }
@@ -144,7 +147,7 @@ button{
     .line {
       color: #b9b9b9;
       transform: scaleY(2.5);
-      margin: 0 6px;
+      margin: 0 4px;
     }
 
     #cart svg {
@@ -172,7 +175,7 @@ button{
       color: #000;
       
       ul {
-      padding: 0px 2.8vw;
+      padding: 0px 2.7vw;
       border-bottom: 1px solid #dfdfdf;
       display: flex;
       align-items: center;
@@ -183,20 +186,12 @@ button{
         text-decoration: none;color:inherit
       }
 
-      li:nth-of-type(1) {
-        flex-grow: 0;
-        padding-right: 1.3vw;
-      }
-      li:nth-of-type(9) {
-        flex-grow: 0;
-        padding-left: 1.3vw;
-      }
-      li {
+     li {
         flex-grow: 1;
         font-size: 15px;
-        padding: 17px 0;
+        padding: 17px 2px;
         text-align: center;
-        cursor:pointer
+        cursor:pointer        
       }
     }
     article {
@@ -239,4 +234,97 @@ button{
  
 `;
 
-export { Nav };
+let Aside = styled.aside`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  z-index: 20;
+  background-color: rgba(91, 87, 87, 0.5);
+  transition: 0.7s ease-in-out;
+  transform: translateX(-100%);
+
+  article {
+    background-color: #fff;
+    width: 340px;
+    padding: 20px;
+    min-height: 100vh;
+  }
+
+  button {
+    float: right;
+    margin: 15px;
+    background-color: #f43397;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    height: 35px;
+    aspect-ratio: 1;
+    font-size: 15px;
+  }
+  svg {
+    margin-bottom: 15px;
+    width: 130px;
+  }
+
+  #profile-pic-modal {
+    border: 1px solid rgb(216, 215, 215);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    justify-content: center;
+  }
+
+  img {
+    height: 30px;
+    margin-right: 5px;
+  }
+
+  h3 {
+    background-color: #f1f5f8;
+    padding: 10px;
+  }
+  .main-para {
+    color: #f43397;
+    height: 15px;
+    overflow: hidden;
+    padding: 5px;
+    margin: 5px 0;
+    img {
+      height: 19px !important;
+      width: 20px !important;
+      float: right;
+      transform: translateY(-2px);
+    }
+  }
+
+  .sub-para {
+    color: #747474;
+    font-size: 90%;
+    margin-left: 10px;
+    padding: 7px 7px 4px;
+    height: 15px;
+    overflow: hidden;
+    img {
+      height: 14px !important;
+      width: 15px !important;
+      float: right;
+      transform: translate(4.3px, -2px);
+    }
+  }
+  .sub-sub-para {
+    color: #000;
+    margin-left: 20px;
+    padding: 4px 7px;
+    font-size: 90%;
+  }
+  .main-para:hover,
+  .sub-para:hover {
+    height: fit-content;
+  }
+`;
+
+export { Nav, Aside };

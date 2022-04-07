@@ -4,11 +4,11 @@ color:black
 }
 
 .checkoutNav{
-    /* display:flex;
+    display:flex;
     align-items: center;
-    justify-content: space-evenly; */
-    width: 700px;
-    margin-top: 300px auto;
+    justify-content: center;
+    /* width: 400px;
+    margin:auto; */
 
 }
 
@@ -94,8 +94,8 @@ margin-left: 100px;
 
 .stepsbox{
     width: 600px;
-  margin: 30px auto;
-  margin-left: 300px;
+   margin-top: 20px;
+ /* margin-left: 300px; */
 }
 
 

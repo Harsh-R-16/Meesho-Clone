@@ -4,14 +4,15 @@ import Home from "../Home/Home";
 import Products from "../Products/Products";
 import { ProductS } from "../Products/Productss";
 import Product from "../Product/Product";
-import Checkout from "../Checkout/Checkout";
 import Cart from "../Cart/Cart";
 import Address from "../Address/Address";
 import Payment from "../Payment/Payment";
 import Summary from "../Summary/Summary";
 import Profile from "../Profile/Profile";
+import Login from "../Profile/Login";
 import Supplier from "../Supplier/Supplier";
 import Footer from "../Footer/Footer";
+import Checkout from "../Checkout/Checkout";
 
 export default function AllRoutes() {
   return (
@@ -27,47 +28,19 @@ export default function AllRoutes() {
         <Route path="/products/:type/:subtype" element={<ProductS />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/supplier" element={<Supplier />} />
       </Routes>
+       <Checkout/>
       <Routes>
-        <Route path="/checkout" element={<Checkout />} />
-        <Route
-          path="/checkout/cart"
-          element={
-            <>
-              <Checkout />
-              <Cart />
-            </>
-          }
-        />
-        <Route
-          path="/checkout/address"
-          element={
-            <>
-              <Checkout />
-              <Address />
-            </>
-          }
-        />
-        <Route
-          path="/checkout/payment"
-          element={
-            <>
-              <Checkout />
-              <Payment />
-            </>
-          }
-        />
-        <Route
-          path="/checkout/summary"
-          element={
-            <>
-              <Checkout />
-              <Summary />
-            </>
-          }
-        />
+      
+         <Route path="/checkout/cart" element={<Cart />} />
+        <Route path="/checkout/address" element={<Address />} />
+        <Route path="/checkout/payment" element={<Payment />} />
+        <Route path="/checkout/summary" element={<Summary />} />
+      
       </Routes>
+     
       {/* <Footer /> */}
     </>
   );

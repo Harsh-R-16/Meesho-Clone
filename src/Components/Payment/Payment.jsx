@@ -5,7 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ProductPricing from '../Cart/ProductPricing';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { increaseStep } from '../../Redux/action';
+ import { increaseStep } from '../../Redux/action';
 function Payment() {
   const navigate = useNavigate()
   const dispatch=useDispatch()

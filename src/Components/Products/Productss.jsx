@@ -2,44 +2,91 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { allProducts } from "../../AllProducts";
 import "./products.css";
+import { Main } from "./Style-Products";
+import { FaStar } from "react-icons/fa";
+let total = Math.round(Math.random() * 1000 + 4526);
 let arr = new Array(Math.floor(Math.random() * 500 + 1000));
+let res;
 for (let i = 0; i < arr.length; i++) {
   arr[i] = i + 1;
 }
 export function ProductS() {
   let { subtype, type } = useParams();
-  console.log(type);
+  // console.log(type);
   let navigate = useNavigate();
   let [products, setProducts] = useState([]);
   let [index, setIndex] = useState(0);
   useEffect(() => {
+    total = Math.round(Math.random() * 1000 + 4526);
     arr = new Array(Math.floor(Math.random() * 500 + 1000));
     for (let i = 0; i < arr.length; i++) {
       arr[i] = i + 1;
     }
     setIndex(0);
-    let res = [];
+    res = [];
     for (let i = 0; i < allProducts.length; i++) {
       if (allProducts[i].type === type) {
         res.push(allProducts[i]);
       }
     }
-    console.log(type);
+    // console.log(type);
     res.sort(() => Math.random() - 0.5);
     setProducts(res);
-  }, [subtype]);
+    document.querySelectorAll("#sort-btns button").forEach((btn) => {
+      btn.classList.remove("active-btn");
+    });
+  }, [type, subtype]);
   // products.sort(() => Math.random() - 0.5);
   window.scrollTo(0, 0);
+
+  const sortingBtns = (e) => {
+    setIndex(0);
+    let btns = e.currentTarget.querySelectorAll("button");
+    btns.forEach((btn) => {
+      if (btn.innerHTML === e.target.innerHTML) btn.classList.add("active-btn");
+      else btn.classList.remove("active-btn");
+    });
+    let newArr = [...res];
+    if (e.target.innerHTML === "Popularity") {
+      newArr.sort((a, b) => b.rating - a.rating);
+    } else if (e.target.innerHTML === "Low to High") {
+      newArr.sort((a, b) => a.sprice - b.sprice);
+    } else if (e.target.innerHTML === "High to Low") {
+      newArr.sort((a, b) => b.sprice - a.sprice);
+    } else if (e.target.innerHTML === "Discount") {
+      newArr.sort((b, a) => b.sprice / b.aprice - a.sprice / a.aprice);
+      console.log(newArr);
+    }
+    setProducts(newArr);
+  };
   // console.log(res);
   return (
-    <main id="products-main">
-      <h2>
-        Showing Products from{" "}
-        <span>
-          {type} / {subtype}
-        </span>{" "}
-        Category
-      </h2>
+    <Main>
+      <section id="category">
+        <div id="sort-btns" onClick={sortingBtns}>
+          <p>Sort By: </p>
+          <button>Popularity</button>
+          <button>High to Low</button>
+          <button>Low to High</button>
+          <button>Discount</button>
+        </div>
+        <div>
+          <h2>
+            Showing Products from{" "}
+            <span>
+              {type} / {subtype}
+            </span>{" "}
+            Category
+          </h2>
+          <p>
+            Showing{" "}
+            <span>
+              {index * 16 + 1} - {index * 16 + 16}
+            </span>{" "}
+            out of <span>{total}</span> Products
+          </p>
+        </div>
+      </section>
       <section id="products">
         {products
           .slice((index % 5) * 16, (index % 5) * 16 + 16)
@@ -67,30 +114,13 @@ export function ProductS() {
                   ₹{Math.floor(Math.random() * 150)} discount on 1st order
                 </p>
                 <p className="rating">
-                  <span>
-                    {rating}{" "}
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 20 20"
-                      fill="#ffffff"
-                      xmlns="http://www.w3.org/2000/svg"
-                      ml="4"
-                      iconsize="10"
-                      className="Icon-sc-1iwi4w1-0 cePfda"
-                    >
-                      <g clipPath="url(#star_svg__clip0)">
-                        <path
-                          d="M19.54 6.85L13.62 5.5 10.51.29a.596.596 0 00-1.02 0L6.38 5.5.46 6.85a.599.599 0 00-.31.98l3.99 4.57-.55 6.04c-.02.21.07.41.24.54.17.12.39.15.59.07L10 16.64l5.58 2.39c.08.03.16.05.23.05h.01c.3.01.6-.26.6-.6 0-.06-.01-.12-.03-.17l-.54-5.93 3.99-4.57c.14-.16.18-.38.12-.58a.544.544 0 00-.42-.38z"
-                          fill="#666"
-                        ></path>
-                      </g>
-                      <defs>
-                        <clipPath id="star_svg__clip0">
-                          <path fill="#fff" d="M0 0h20v19.08H0z"></path>
-                        </clipPath>
-                      </defs>
-                    </svg>
+                  <span
+                    style={{
+                      backgroundColor:
+                        rating >= 3.5 ? " #23bb75" : "rgb(244, 182, 25) ",
+                    }}
+                  >
+                    {rating} <FaStar color="#fff" />
                   </span>{" "}
                   {reviews} Reviews
                 </p>
@@ -131,14 +161,19 @@ export function ProductS() {
           )}
       </section>
       <div id="nav-buttons">
-        {index !== 0 && <button className="btns">Previous</button>}
+        {index !== 0 && (
+          <button className="btns" onClick={() => setIndex((i) => i - 1)}>
+            Previous
+          </button>
+        )}
         {arr.map(
           (i) =>
-            i >= index &&
+            i > index &&
             i <= index + 10 && (
               <button
-                onClick={() => setIndex(i + 1)}
-                style={{ color: i === index + 1 && "red" }}
+                onClick={() => setIndex(i - 1)}
+                key={i}
+                className={i === index + 1 ? "active-btn" : ""}
               >
                 {" "}
                 {i}
@@ -149,6 +184,6 @@ export function ProductS() {
           Next
         </button>
       </div>
-    </main>
+    </Main>
   );
 }
