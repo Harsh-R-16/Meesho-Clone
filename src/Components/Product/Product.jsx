@@ -3,16 +3,23 @@ import { allProducts } from "../../AllProducts";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../Redux/action.js";
+import {
+  FaShoppingCart,
+  FaStar,
+  FaShopify,
+  FaAngleRight,
+} from "react-icons/fa";
 import ratingImg from "./rating.png";
 import "./product.css";
 let i;
-
+let discount = Math.floor(Math.random() * 150);
 export default function Product() {
   let { id } = useParams();
   let [state, setState] = React.useState("Add to Cart");
+  let [image, setImage] = React.useState("");
   let cart = useSelector((state) => state.cart);
   let dispatch = useDispatch();
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
   console.log(id);
   for (i = 0; i < allProducts.length; i++) {
     if (allProducts[i].id === +id) {
@@ -29,23 +36,26 @@ export default function Product() {
   console.log(allProducts[i], i);
   let { img, name, soldBy, similar, sprice, aprice, rating, reviews, details } =
     allProducts[i];
+  React.useEffect(() => {
+    setImage(img);
+  }, [img]);
   return (
     <section id="single-product">
       <article id="product-article-1">
         {similar.map((i) => (
-          <img src={i} alt="" />
+          <img src={i} alt="" onClick={() => setImage(i)} />
         ))}
       </article>
       <article id="product-article-2">
-        <img src={img} alt="" id="main-img" />
+        <img src={image} alt="" id="main-img" />
         <button id={+id} onClick={clcHandler}>
-          {state}
+          <FaShoppingCart /> {state}
         </button>
         <hr />
-        <p>Similar products</p>
+        <p>3 Similar products</p>
         <div>
           {similar.map((i) => (
-            <img src={i} alt="" />
+            <img src={i} alt="" onClick={() => setImage(i)} />
           ))}
         </div>
       </article>
@@ -60,29 +70,7 @@ export default function Product() {
           </h3>
           <h4 className="rating">
             <span>
-              {rating}{" "}
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 20 20"
-                fill="#ffffff"
-                xmlns="http://www.w3.org/2000/svg"
-                ml="4"
-                iconsize="10"
-                className="Icon-sc-1iwi4w1-0 cePfda"
-              >
-                <g clip-path="url(#star_svg__clip0)">
-                  <path
-                    d="M19.54 6.85L13.62 5.5 10.51.29a.596.596 0 00-1.02 0L6.38 5.5.46 6.85a.599.599 0 00-.31.98l3.99 4.57-.55 6.04c-.02.21.07.41.24.54.17.12.39.15.59.07L10 16.64l5.58 2.39c.08.03.16.05.23.05h.01c.3.01.6-.26.6-.6 0-.06-.01-.12-.03-.17l-.54-5.93 3.99-4.57c.14-.16.18-.38.12-.58a.544.544 0 00-.42-.38z"
-                    fill="#666"
-                  ></path>
-                </g>
-                <defs>
-                  <clipPath id="star_svg__clip0">
-                    <path fill="#fff" d="M0 0h20v19.08H0z"></path>
-                  </clipPath>
-                </defs>
-              </svg>
+              {rating} <FaStar />
             </span>{" "}
             {reviews} Reviews
           </h4>
@@ -92,7 +80,7 @@ export default function Product() {
               src="https://www.svgrepo.com/show/250311/percentage-discount.svg"
               alt=""
             />
-            ₹{Math.floor(Math.random() * 150)} discount on 1st order
+            ₹{discount} discount on 1st order
           </h5>
           <p>Free Delivery</p>
         </div>
@@ -105,6 +93,7 @@ export default function Product() {
           <button>XL</button>
         </div>
         <div id="details">
+          <p>Product Details</p>
           {details.map((i) => (
             <p>{i}</p>
           ))}
@@ -116,22 +105,29 @@ export default function Product() {
           <p>Country of Origin : India</p>
           <p>More Information</p>
         </div>
-        <div id="Sold By">
+        <div id="soldBy">
+          <p>Sold By</p>
           <article>
-            <img src="https://www.svgrepo.com/show/56375/shop.svg" alt="" />
-            <h2>{soldBy}</h2>
+            <FaShopify />
+            <span>{soldBy}</span>
             <button>View Shop</button>
           </article>
+          <h6>
+            <span>{Math.round(Math.random() * 400 + 50)}</span> Products{" "}
+            <span>{Math.floor(Math.random() * 5000 + 100)}</span> Followers
+          </h6>
         </div>
         <div id="rating-img">
-          <h2>Product Rating &amp; Reviews</h2>
+          <p>Product Rating &amp; Reviews</p>
           <img src={ratingImg} alt="" />
         </div>
         <div id="information">
-          <p>View All Reviews &gt;</p>
+          <p>
+            View All Reviews <FaAngleRight />
+          </p>
           <button>Lowest Price</button>
           <button>7-day Returns</button>
-          <button>Cash om Delivery</button>
+          <button>Cash on Delivery</button>
         </div>
         <div id="meesho-logo">
           <svg
@@ -164,7 +160,7 @@ export default function Product() {
               fill="#fff"
             ></path>
           </svg>
-          <p>Best Quality Products from Trusted Supplier</p>
+          <span>Best Quality Products from Trusted Supplier</span>
         </div>
       </article>
     </section>
