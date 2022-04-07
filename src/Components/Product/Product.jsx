@@ -9,11 +9,19 @@ import {
   FaShopify,
   FaAngleRight,
 } from "react-icons/fa";
+import { Section } from "./Styled-Product";
 import ratingImg from "./rating.png";
 import "./product.css";
 let i;
 let discount = Math.floor(Math.random() * 150);
 export default function Product() {
+  let allImages = [
+    "https://source.unsplash.com/random/?cloths",
+    "https://source.unsplash.com/random/?shoes",
+    "https://source.unsplash.com/random/?kids",
+    "https://source.unsplash.com/random/?motivation",
+    "https://source.unsplash.com/random/?nature",
+  ];
   let { id } = useParams();
   let [state, setState] = React.useState("Add to Cart");
   let [image, setImage] = React.useState("");
@@ -40,9 +48,9 @@ export default function Product() {
     window.scrollTo(0, 0);
   }, [img]);
   return (
-    <section id="single-product">
+    <Section id="single-product">
       <article id="product-article-1">
-        {similar.map((i) => (
+        {allImages.map((i) => (
           <img src={i} alt="" onClick={() => setImage(i)} />
         ))}
       </article>
@@ -163,6 +171,6 @@ export default function Product() {
           <span>Best Quality Products from Trusted Supplier</span>
         </div>
       </article>
-    </section>
+    </Section>
   );
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Nav } from "./Styled-Navbar";
+import { Nav, Aside } from "./Styled-Navbar";
 import { listItems, data } from "./data";
 import { allProducts } from "../../AllProducts";
 import { Link } from "react-router-dom";
@@ -70,7 +70,7 @@ export default function Navbar() {
   return (
     <>
       <FaAlignJustify id="hidden-menu-open" onClick={modalOpen} />
-      <aside id="hidden-menu">
+      <Aside id="hidden-menu">
         <button onClick={modalClose}>X</button>
         <article>
           <Link to="/">
@@ -126,7 +126,7 @@ export default function Navbar() {
             </p>
           ))}
         </article>
-      </aside>
+      </Aside>
       <Nav>
         <section id="top">
           <Link to="/">
