@@ -1,0 +1,96 @@
+.navLink{
+text-decoration: none;
+color:black
+}
+
+.checkoutNav{
+    /* display:flex;
+    align-items: center;
+    justify-content: space-evenly; */
+    width: 700px;
+    margin-top: 300px auto;
+
+}
+
+.logodiv{
+    margin-top: -30px;
+    padding: 10px;
+}
+
+
+.cartDiv,.address{
+    display: grid;
+   grid-template-columns: 45% 50%;
+   gap: 10px;
+    /* align-items: center;
+    justify-content: space-between; */
+ width: 80%; 
+    margin: auto;
+     /* border: 1px solid black;  */
+}
+
+.cartLeftp1{
+    display: flex;
+    align-items: center;
+}
+
+.table th,td{
+    padding:8px 25px;
+   
+
+}
+
+.itemDiv{
+    display:flex;
+;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid rgba(128, 128, 128, 0.267);
+}
+
+.middleItemDiv{
+    margin-left: 40px;
+}
+.cartRightSide{
+margin-left: 100px;
+
+}
+
+.addressHead{
+    display: flex;
+    margin: 35px 0px;
+}
+
+.form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    border: 0.5px solid rgba(128, 128, 128, 0.267);
+    border-radius: 10px;
+
+}
+
+.cityDiv{
+    display: flex;
+}
+
+/* .input{
+  padding: 10px;
+  margin: 50px;
+  margin-bottom: 100px;
+} */
+
+.stepsbox{
+    width: 600px;
+  margin: 30px auto;
+  margin-left: 300px;
+}
+
+
+.middleItemDiv *{
+    margin: 5px;
+}
+
+
+

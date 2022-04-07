@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { Nav, Aside } from "./Styled-Navbar";
 import { listItems, data } from "./data";
 import { allProducts } from "../../AllProducts";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FaAlignJustify } from "react-icons/fa";
 import "./navbar.css";
+import { Link, useNavigate } from "react-router-dom";
+import styles from "../allstyles.module.css";
 
 export default function Navbar() {
   let count = useSelector((state) => state.count);
@@ -38,6 +39,11 @@ export default function Navbar() {
     };
   });
 
+  const navigate = useNavigate();
+
+  const redirectToCheckout = () => {
+    navigate("/checkout/cart");
+  };
   const inpHandler = (e) => {
     let article = document.querySelector("#search-results");
     let newArr = [];
@@ -223,7 +229,31 @@ export default function Navbar() {
             <p>Become a Supplier</p>
           </Link>
           <p className="line">|</p>
-          <Link to="/profile">
+          <p>
+            <img
+              src="https://www.svgrepo.com/show/284856/profile-user.svg"
+              alt=""
+            />
+            Profile
+          </p>
+          <p id="cart">
+            <span>1</span>
+            <svg
+              onClick={redirectToCheckout}
+              id="cart"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="currentColor"
+              class="bi bi-cart-check"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />{" "}
+              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />{" "}
+            </svg>
+            {/* <Link className={styles.navLink} to='/cart'>Cart</Link> */}
+          </p>
+          {/* <Link to="/profile">
             <p id="profile">
               <img
                 src="https://www.svgrepo.com/show/284856/profile-user.svg"
@@ -255,7 +285,7 @@ export default function Navbar() {
               </svg>
               Cart
             </p>
-          </Link>
+          </Link> */}
         </section>
         <section id="bottom" onMouseOver={mouseOver} onMouseOut={mouseOut}>
           <ul>

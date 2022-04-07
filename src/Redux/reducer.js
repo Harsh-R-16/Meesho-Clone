@@ -1,4 +1,4 @@
-import { ADD_TO_CART, ADD_NAME } from "./action";
+import { ADD_TO_CART, INCREASE_STEP, SAVE_ADDRESS, ADD_NAME } from "./action";
 
 export const reducer = (store, action) => {
   switch (action.type) {
@@ -17,6 +17,18 @@ export const reducer = (store, action) => {
         ...store,
         name: action.payload,
       };
+
+    case INCREASE_STEP:
+      return {
+        ...store,
+        step: store.step + 1,
+      };
+    case SAVE_ADDRESS:
+      return {
+        ...store,
+        address: action.payload,
+      };
+
     default:
       return store;
   }
