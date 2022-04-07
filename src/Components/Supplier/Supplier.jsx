@@ -71,7 +71,9 @@ export default function Supplier() {
             <p onClick={() => setInd(5)}>Grow Business</p>
           </div>
           <button>Login</button>
-          <button>Start Selling</button>
+          <Link to="/StartSelling">
+            <button>Start Selling</button>
+          </Link>
         </nav>
         <h1>Meesho Supplier Page</h1>
       </main>
