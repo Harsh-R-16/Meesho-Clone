@@ -1,0 +1,90 @@
+.supplier_form_main_div {
+  background-color: white;
+  width: 36vw;
+  z-index: 200;
+  box-shadow: 10px grey;
+}
+.supplier_form_text_field {
+  margin-left: 3%;
+}
+.supplier_form_passwrd_field_info {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  left: 5%;
+  font-size: 0.7rem;
+}
+.supplier_form_space {
+  min-height: 8rem;
+}
+.supplier_create_account {
+  position: relative;
+  left: 6%;
+}
+.supplier_form_checkbox {
+  position: relative;
+  left: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.supplier_form_whasapp_image {
+  background-image: url("./WhatsApp_logo.png");
+  min-height: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pink-text {
+  color: rgb(182, 50, 105);
+}
+.SmapleForm_common_fields {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.SamleForm_MobileNumber {
+  width: 60%;
+  height: 2.5rem;
+  text-align: center;
+  border: 2px solid rgb(198, 190, 190);
+}
+.SamleForm_sendOTP {
+  width: 20%;
+  height: 2.5rem;
+  text-align: center;
+}
+.SamleForm_email {
+  width: 87%;
+  height: 2.5rem;
+  text-align: center;
+  border: 2px solid rgb(198, 190, 190);
+}
+.SamleForm_enterOTP {
+  width: 87%;
+  height: 2.5rem;
+  text-align: center;
+  border: 2px solid rgb(198, 190, 190);
+}
+.SamleForm_password {
+  width: 87%;
+  height: 2.5rem;
+  text-align: center;
+  border: 2px solid rgb(198, 190, 190);
+}
+.SampleForm_checkBox {
+  background-color: rgb(154, 11, 59);
+}
+.SampleForm_submitButton {
+  width: 87%;
+  height: 2.5rem;
+  text-align: center;
+  border: 2px solid rgb(198, 190, 190);
+  background-color: rgb(53, 53, 128);
+  color: white;
+  margin: auto;
+}
+#supplier_form_last_text {
+  font-size: 0.8rem;
+  margin-left: 3%;
+  display: block;
+}
