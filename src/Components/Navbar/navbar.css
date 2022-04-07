@@ -39,9 +39,15 @@
   #top p {
     display: none !important;
   }
+  #top {
+    padding-right: 33px !important;
+  }
+  #top #logo {
+    width: 80px;
+  }
 }
 #hidden-menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   width: 100%;
@@ -127,4 +133,16 @@ h3 {
   width: 15px !important;
   float: right;
   transform: translate(4.3px, -2px);
+}
+#hidden-menu-open {
+  position: fixed;
+  top: 26px;
+  right: 6px;
+  font-size: 23px;
+  z-index: 10;
+}
+@media (min-width: 800px) {
+  #hidden-menu-open {
+    display: none;
+  }
 }

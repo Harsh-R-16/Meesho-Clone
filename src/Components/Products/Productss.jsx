@@ -12,7 +12,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 export function ProductS() {
   let { subtype, type } = useParams();
-  console.log(type);
+  // console.log(type);
   let navigate = useNavigate();
   let [products, setProducts] = useState([]);
   let [index, setIndex] = useState(0);
@@ -29,7 +29,7 @@ export function ProductS() {
         res.push(allProducts[i]);
       }
     }
-    console.log(type);
+    // console.log(type);
     res.sort(() => Math.random() - 0.5);
     setProducts(res);
     document.querySelectorAll("#sort-btns button").forEach((btn) => {
@@ -62,27 +62,31 @@ export function ProductS() {
   // console.log(res);
   return (
     <Main>
-      <div id="sort-btns" onClick={sortingBtns}>
-        <p>Sort By: </p>
-        <button>Popularity</button>
-        <button>High to Low</button>
-        <button>Low to High</button>
-        <button>Discount</button>
-      </div>
-      <h2>
-        Showing Products from{" "}
-        <span>
-          {type} / {subtype}
-        </span>{" "}
-        Category
-      </h2>
-      <p>
-        Showing{" "}
-        <span>
-          {index * 16 + 1} - {index * 16 + 16}
-        </span>{" "}
-        out of <span>{total}</span> Products
-      </p>
+      <section id="category">
+        <div id="sort-btns" onClick={sortingBtns}>
+          <p>Sort By: </p>
+          <button>Popularity</button>
+          <button>High to Low</button>
+          <button>Low to High</button>
+          <button>Discount</button>
+        </div>
+        <div>
+          <h2>
+            Showing Products from{" "}
+            <span>
+              {type} / {subtype}
+            </span>{" "}
+            Category
+          </h2>
+          <p>
+            Showing{" "}
+            <span>
+              {index * 16 + 1} - {index * 16 + 16}
+            </span>{" "}
+            out of <span>{total}</span> Products
+          </p>
+        </div>
+      </section>
       <section id="products">
         {products
           .slice((index % 5) * 16, (index % 5) * 16 + 16)
@@ -168,7 +172,8 @@ export function ProductS() {
             i <= index + 10 && (
               <button
                 onClick={() => setIndex(i - 1)}
-                className={i === index + 1 && "active-btn"}
+                key={i}
+                className={i === index + 1 ? "active-btn" : ""}
               >
                 {" "}
                 {i}

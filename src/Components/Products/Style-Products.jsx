@@ -2,8 +2,23 @@ import styled from "styled-components";
 
 let Main = styled.main`
   margin: 50px 3.2vw;
+  #category {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 1vw 50px 2vw;
+    flex-wrap: wrap;
+    @media (max-width: 1350px) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    div {
+      margin-bottom: 20px;
+    }
+  }
   h2 {
-    margin: 10px 1vw;
+    margin-bottom: 20px;
     font-size: 14.5px;
     font-weight: normal;
     span {
@@ -14,7 +29,6 @@ let Main = styled.main`
   }
   h2 + p {
     font-size: 14px;
-    margin: 20px 1vw 40px;
     span {
       font-weight: 500;
     }
@@ -25,6 +39,9 @@ let Main = styled.main`
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 2vw 20px;
+    @media (max-width: 720px) {
+      justify-content: center;
+    }
     div {
       width: 300px;
       margin: 0 10px;

@@ -59,23 +59,28 @@ export default function Products() {
   };
   return (
     <Main>
-      <div id="sort-btns" onClick={sortingBtns}>
-        <p>Sort By: </p>
-        <button>Popularity</button>
-        <button>High to Low</button>
-        <button>Low to High</button>
-        <button>Discount</button>
-      </div>
-      <h2>
-        Showing Products from <span>{type}</span> Category:
-      </h2>
-      <p>
-        Showing{" "}
-        <span>
-          {index * 16 + 1} - {index * 16 + 16}
-        </span>{" "}
-        out of <span>{total}</span> Products
-      </p>
+      <section id="category">
+        <div id="sort-btns" onClick={sortingBtns}>
+          <p>Sort By: </p>
+          <button>Popularity</button>
+          <button>High to Low</button>
+          <button>Low to High</button>
+          <button>Discount</button>
+        </div>
+        <div>
+          {" "}
+          <h2>
+            Showing Products from <span>{type}</span> Category:
+          </h2>
+          <p>
+            Showing{" "}
+            <span>
+              {index * 16 + 1} - {index * 16 + 16}
+            </span>{" "}
+            out of <span>{total}</span> Products
+          </p>
+        </div>
+      </section>
       <section id="products">
         {products
           .slice((index % 5) * 16, (index % 5) * 16 + 16)
@@ -161,7 +166,7 @@ export default function Products() {
             i <= index + 10 && (
               <button
                 onClick={() => setIndex(i - 1)}
-                className={i === index + 1 && "active-btn"}
+                className={i === index + 1 ? "active-btn" : ""}
               >
                 {" "}
                 {i}

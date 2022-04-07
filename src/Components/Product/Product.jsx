@@ -19,7 +19,6 @@ export default function Product() {
   let [image, setImage] = React.useState("");
   let cart = useSelector((state) => state.cart);
   let dispatch = useDispatch();
-  // window.scrollTo(0, 0);
   console.log(id);
   for (i = 0; i < allProducts.length; i++) {
     if (allProducts[i].id === +id) {
@@ -38,6 +37,7 @@ export default function Product() {
     allProducts[i];
   React.useEffect(() => {
     setImage(img);
+    window.scrollTo(0, 0);
   }, [img]);
   return (
     <section id="single-product">
