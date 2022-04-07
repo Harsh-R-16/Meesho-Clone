@@ -19,6 +19,10 @@ export default function AllRoutes() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/cart" element={<Cart />} /> */}
+        <Route path="/products" element={<Products />} />
+        <Route path="/product" element={<Product />} />
+
         <Route path="/products/:type" element={<Products />} />
         <Route path="/products/:type/:subtype" element={<ProductS />} />
         <Route path="/product/:id" element={<Product />} />
@@ -30,7 +34,7 @@ export default function AllRoutes() {
         <Route path="/checkout/payment" element={<Payment />} />
         <Route path="/checkout/summary" element={<Summary />} />{" "}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
