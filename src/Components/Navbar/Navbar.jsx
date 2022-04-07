@@ -270,10 +270,25 @@ export default function Navbar() {
                 <p>Go to Your Orders</p>
               </div>
             </p>
+<<<<<<< HEAD
           </Link> */}
           {/* <Link to="/checkout">
           </Link>
           <Link to={name === "User" ? "/profile" : "/checkout/cart"}>
+=======
+
+          </Link> */}
+          {/* <Link to="/checkout">
+
+          </Link>
+          <Link to={name === "User" ? "/profile" : "/checkout/cart"}>
+
+
+          </Link>
+          <Link to={name === "User" ? "/profile" : "/checkout/cart"}>
+
+          </Link> */}
+          {/* <Link to="/checkout">
             <p id="cart">
               <span>{count}</span>
               <svg

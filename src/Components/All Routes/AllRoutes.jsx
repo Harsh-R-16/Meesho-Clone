@@ -41,7 +41,7 @@ export default function AllRoutes() {
       
       </Routes>
      
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

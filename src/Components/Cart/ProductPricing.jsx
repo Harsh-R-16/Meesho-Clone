@@ -32,14 +32,12 @@ function ProductPricing({ title, handleClick }) {
 <td>₹100</td>
         </tr>
       </tbody>
+<<<<<<< HEAD
     
-      <tfoot>
-        <tr>
-          <th>Order Total</th>
-          <th>₹300</th>
-        </tr>
-      </tfoot>
-    </table> */}
+=======
+      {/* <hr /> */}
+
+     
     
     <Button sx={{backgroundColor:'#F43397',width:'300px',border:'none',padding:'10px' ,m:2}}
         variant="contained" onClick={handleClick}>{title}</Button>
