@@ -1,7 +1,8 @@
 import React from "react";
 import "./cart.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { allProducts } from "../../AllProducts";
+import { removeFromCart } from "../../Redux/action.js";
 let arr = [
   Math.floor(Math.random() * 20) + 7,
   Math.floor(Math.random() * 20) + 7,
@@ -11,11 +12,13 @@ let arr = [
 ];
 export default function Cart() {
   let cart = useSelector((state) => state.cart);
+  let dispatch = useDispatch();
   let res = [];
   for (let i = 0; i < allProducts.length; i++) {
     if (cart.includes(allProducts[i].id)) {
-      let { img, name, soldBy, aprice, sprice } = allProducts[i];
+      let { img, name, soldBy, aprice, sprice, id } = allProducts[i];
       res.push({
+        id,
         img,
         name,
         soldBy,
@@ -36,7 +39,9 @@ export default function Cart() {
       ele.taprice += ele.aprice;
       ele.tsprice += ele.sprice;
     } else {
-      if (ele.q === 1) return;
+      if (ele.q === 1) {
+        return;
+      }
       ele.q--;
       ele.taprice -= ele.aprice;
       ele.tsprice -= ele.sprice;
@@ -55,7 +60,7 @@ export default function Cart() {
           <span id="total-items">{cartData.length} Items</span>
         </h2>
         {cartData.map((i, index) => (
-          <div key={index}>
+          <div key={index} id={i.id}>
             <img src={i.img} alt="" />
             <h3>{i.name}</h3>
             <p>Only {arr[index % 5]} Left In Stock</p>
@@ -71,11 +76,12 @@ export default function Cart() {
               <button onClick={(e) => countHandler(e, "inc")}>+</button>
             </div>
             <button
-              id={index}
+              id={i.id}
               onClick={() => {
                 let newData = [...cartData];
                 newData.splice(index, 1);
                 setCartData(newData);
+                dispatch(removeFromCart(i.id));
               }}
             >
               Remove

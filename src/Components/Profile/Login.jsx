@@ -12,7 +12,7 @@ export default function Login() {
     let name = e.target.elements[1].value;
     dispatch(addName(name));
     localStorage.setItem("name", name);
-    navigate("/checkout");
+    navigate("/checkout/cart");
   };
   return (
     <section id="login-page">
