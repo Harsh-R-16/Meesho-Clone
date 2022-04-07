@@ -14,6 +14,7 @@ import Login from "../Profile/Login";
 import Supplier from "../Supplier/Supplier";
 import Footer from "../Footer/Footer";
 import { StartSelling } from "../Supplier/StartSelling";
+import StartSellingLogin from "../Supplier/StartSelling_LoginPage";
 export default function AllRoutes() {
   return (
     <>
@@ -27,6 +28,7 @@ export default function AllRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/supplier" element={<Supplier />} />
           <Route path="/StartSelling" element={<StartSelling />} />
+            <Route path="/StartSellingLogin" element={<StartSellingLogin />} />
       </Routes>
       <Routes>
         <Route path="/checkout" element={<Checkout />} />
