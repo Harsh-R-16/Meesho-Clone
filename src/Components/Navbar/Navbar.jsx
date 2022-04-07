@@ -238,7 +238,7 @@ export default function Navbar() {
               </div>
             </p>
           </Link>
-          <Link to={name === "User" ? "/profile" : "/checkout"}>
+          <Link to={name === "User" ? "/profile" : "/checkout/cart"}>
             <p id="cart">
               <span>{count}</span>
               <svg
