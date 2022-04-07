@@ -268,13 +268,20 @@ export default function Navbar() {
                 <p>Go to Your Orders</p>
               </div>
             </p>
-<<<<<<< HEAD
+
           </Link> */}
           {/* <Link to="/checkout">
-=======
+
           </Link>
           <Link to={name === "User" ? "/profile" : "/checkout/cart"}>
->>>>>>> e311d9ab18881291cc91edab4b1d0f68a15b7484
+
+
+          </Link>
+          <Link to={name === "User" ? "/profile" : "/checkout/cart"}>
+
+          </Link> */}
+          {/* <Link to="/checkout">
+
             <p id="cart">
               <span>{count}</span>
               <svg

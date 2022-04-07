@@ -16,6 +16,7 @@ export default function Address() {
 
   
     <AddressForm />
+
     <hr style={{margin:'0px 30px', color:'#666666'}} />
     <ProductPricing title='Save Address and Continue' handleClick={handleClick}/>
   </div>;

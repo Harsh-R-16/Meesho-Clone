@@ -40,8 +40,8 @@ export default function AllRoutes() {
         <Route path="/checkout/summary" element={<Summary />} />
       
       </Routes>
-     
-      {/* <Footer /> */}
+
+      <Footer /> 
     </>
   );
 }

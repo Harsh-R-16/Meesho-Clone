@@ -22,12 +22,19 @@ export default function Checkout() {
 
   // const [step, setStep] = React.useState(0)
   const step = useSelector((state) => state.step)
+
   console.log('step',step) 
+
+  console.log('step',step)
+
   return (
     <nav className={styles.checkoutNav}>
       {/* <div className={styles.logodiv}>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTanHWiaUeAdVsXoTyJgx8xwBmQgCim_MmBIxG3tUDmb05jRejI" height="130px"
+
           alt='logo' /> 
+          alt='logo' />
+
       </div> */}
        <Box className={styles.stepsbox}>
      <Stepper sx={{}} activeStep={step} alternativeLabel>

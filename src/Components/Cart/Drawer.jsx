@@ -14,13 +14,13 @@ import styles from '../allstyles.module.css'
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 
+
 export default function Drawer() {
   const [state, setState] = React.useState({
 
     right: false,
   });
 
- 
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -41,11 +41,20 @@ export default function Drawer() {
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 550 }}
       role="presentation"
       // onClick={toggleDrawer(anchor, false)}
+
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 450 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+
       onKeyDown={toggleDrawer(anchor, false)}
     >
      
    <h4 style={{margin:'20px'}}>Edit Item</h4>
           <Divider />
+
       <div className={styles.drawerItem}>
         <img src="https://images.meesho.com/images/products/30839757/fqcds_512.jpg" alt="product" height="75px" width="60px" />
         
@@ -66,6 +75,9 @@ export default function Drawer() {
         </div>
       
         </div>
+
+          <CartItem />
+
           <Divider/>
           <Button sx={{ 
               backgroundColor: '#F43397',
@@ -73,9 +85,13 @@ export default function Drawer() {
               marginLeft: '40px',
               marginTop:'20px'
               
+
       }}
       onClick={toggleDrawer(anchor, false)}
         variant="contained">
+
+          }} variant="contained">
+
               Save Changes
           </Button>
       </Box>
@@ -89,6 +105,9 @@ export default function Drawer() {
           <Button sx={{
             color: '#F43397', marginTop: '-40px', fontWeight: '700',
           fontSize:'17px'}} onClick={toggleDrawer('right', true)}>Edit</Button>
+
+         <Button sx={{color:'#F43397',marginTop: '-40px',fontWeight:'700px'}} onClick={toggleDrawer('right', true)}>Edit</Button>
+
           <SwipeableDrawer
             anchor={'right'}
             open={state['right']}

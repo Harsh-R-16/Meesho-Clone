@@ -4,11 +4,12 @@ color:black
 }
 
 .checkoutNav{
-    display:flex;
+
+    /* display:flex;
     align-items: center;
-    justify-content: center;
-    /* width: 400px;
-    margin:auto; */
+    justify-content: space-evenly; */
+    width: 700px;
+
 
 }
 
@@ -18,10 +19,11 @@ color:black
 }
 
 
-.cartDiv,.address,.paymentDiv{
+
+.cartDiv,.address{
     display: grid;
-   grid-template-columns: 45% 0.1% 50%;
-   gap: 10px;
+   grid-template-columns: 45% 50%;
+gap: 10px;
     /* align-items: center;
     justify-content: space-between; */
  width: 80%; 
@@ -50,13 +52,21 @@ margin-right:15px ;
 
 
 
+}
+
+.table th,td{
+    padding:8px 25px;
+   
+
+}
+
 .itemDiv{
     display:flex;
 ;
     justify-content: center;
     align-items: center;
     border: 0.5px solid rgba(128, 128, 128, 0.267);
-  
+
 }
 
 .middleItemDiv{
@@ -96,6 +106,8 @@ margin-left: 100px;
     width: 600px;
    margin-top: 20px;
  /* margin-left: 300px; */
+  margin: 30px auto;
+  margin-left: 300px;
 }
 
 

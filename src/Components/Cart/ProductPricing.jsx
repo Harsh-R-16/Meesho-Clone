@@ -33,6 +33,8 @@ function ProductPricing({ title, handleClick }) {
         </tr>
       </tbody>
       {/* <hr /> */}
+
+      <hr />
       <tfoot>
         <tr>
           <th>Order Total</th>
