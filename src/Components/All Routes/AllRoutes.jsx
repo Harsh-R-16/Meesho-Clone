@@ -31,13 +31,13 @@ export default function AllRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/supplier" element={<Supplier />} />
       </Routes>
-       <Checkout/>
+       
       <Routes>
       
-         <Route path="/checkout/cart" element={<Cart />} />
-        <Route path="/checkout/address" element={<Address />} />
-        <Route path="/checkout/payment" element={<Payment />} />
-        <Route path="/checkout/summary" element={<Summary />} />
+         <Route path="/checkout/cart" element={<div><Checkout/><Cart /></div>} />
+        <Route path="/checkout/address" element={<div><Checkout/><Address /></div>} />
+        <Route path="/checkout/payment" element={<div><Checkout/><Payment /></div>} />
+        <Route path="/checkout/summary" element={<div><Checkout/><Summary /></div>} />
       
       </Routes>
      

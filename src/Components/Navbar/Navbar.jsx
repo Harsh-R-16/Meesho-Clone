@@ -22,6 +22,8 @@ export default function Navbar() {
     e.currentTarget.classList.remove("height");
   };
 
+  
+
   document.body.addEventListener("click", function (e) {
     let article = document.querySelector("#search-results");
     if (e.target.parentElement.id === "search-results") {
@@ -238,7 +240,7 @@ export default function Navbar() {
             Profile
           </p>
           <p id="cart">
-            <span>1</span>
+            <span>{count}</span>
             <svg
               onClick={redirectToCheckout}
               id="cart"
@@ -268,13 +270,10 @@ export default function Navbar() {
                 <p>Go to Your Orders</p>
               </div>
             </p>
-<<<<<<< HEAD
           </Link> */}
           {/* <Link to="/checkout">
-=======
           </Link>
           <Link to={name === "User" ? "/profile" : "/checkout/cart"}>
->>>>>>> e311d9ab18881291cc91edab4b1d0f68a15b7484
             <p id="cart">
               <span>{count}</span>
               <svg

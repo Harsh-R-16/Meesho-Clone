@@ -1,5 +1,5 @@
 // <<<<<<< HEAD
-import { ADD_TO_CART, INCREASE_STEP, SAVE_ADDRESS, ADD_NAME } from "./action";
+import { ADD_TO_CART, INCREASE_STEP, SAVE_ADDRESS, ADD_NAME, INCREASE_COUNT, DECREASE_COUNT } from "./action";
 // =======
 // import { ADD_TO_CART } from "./action";
 
@@ -20,6 +20,16 @@ export const reducer = (store, action) => {
       return {
         ...store,
         step: store.step + 1
+      }
+    case INCREASE_COUNT:
+      return {
+        ...store,
+        count: store.count + 1
+      }
+    case DECREASE_COUNT:
+      return {
+        ...store,
+        count: store.count -1
       }
     case SAVE_ADDRESS:
       return {

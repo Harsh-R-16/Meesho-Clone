@@ -10,7 +10,7 @@ function ProductPricing({ title, handleClick }) {
     const navigate=useNavigate()
   return (
     <div className={styles.cartRightSide}>
-    <table className={styles.table}>
+    {/* <table className={styles.table}>
       <thead>
         <tr>
           <th>Price Details</th>
@@ -32,14 +32,14 @@ function ProductPricing({ title, handleClick }) {
 <td>₹100</td>
         </tr>
       </tbody>
-      {/* <hr /> */}
+    
       <tfoot>
         <tr>
           <th>Order Total</th>
           <th>₹300</th>
         </tr>
       </tfoot>
-    </table>
+    </table> */}
     
     <Button sx={{backgroundColor:'#F43397',width:'300px',border:'none',padding:'10px' ,m:2}}
         variant="contained" onClick={handleClick}>{title}</Button>

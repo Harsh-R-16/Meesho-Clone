@@ -2,7 +2,7 @@ import React from "react";
 import { allProducts } from "../../AllProducts";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../Redux/action.js";
+import { addToCart, increaseCount } from "../../Redux/action.js";
 import {
   FaShoppingCart,
   FaStar,
@@ -37,6 +37,7 @@ export default function Product() {
 
   const clcHandler = (e) => {
     console.log(e)
+    // dispatch(increaseCount())
     dispatch(addToCart(e.target.id));
     if (state === "Add to Cart") setState("Already in the Cart");
   };

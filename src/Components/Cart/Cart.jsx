@@ -35,7 +35,7 @@ import "./cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import { allProducts } from "../../AllProducts";
 import { useNavigate } from "react-router-dom";
-import { increaseStep } from "../../Redux/action";
+import { decreaseCount, increaseStep } from "../../Redux/action";
 let arr = [
   Math.floor(Math.random() * 20) + 7,
   Math.floor(Math.random() * 20) + 7,
@@ -45,6 +45,7 @@ let arr = [
 ];
 export default function Cart() {
   let cart = useSelector((state) => state.cart);
+  let count = useSelector((state) => state.count);
   let res = [];
   for (let i = 0; i < allProducts.length; i++) {
     if (cart.includes(allProducts[i].id)) {
@@ -92,7 +93,7 @@ export default function Cart() {
         <h1>Order Summary</h1>
         <h2>
           Cart <span id="cart-line">| </span>
-          <span id="total-items">{cartData.length} Items</span>
+          <span id="total-items">{count} Items</span>
         </h2>
         {cartData.map((i, index) => (
           <div key={index}>
@@ -113,6 +114,7 @@ export default function Cart() {
             <button
               id={index}
               onClick={() => {
+                dispatch(decreaseCount())
                 let newData = [...cartData];
                 newData.splice(index, 1);
                 setCartData(newData);
