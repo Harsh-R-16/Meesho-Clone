@@ -7,6 +7,7 @@ export default function Profile() {
   const submitForm = (e) => {
     let a = Math.round(Math.random() * 1000 + 123456);
     alert("Your OTP is: " + a);
+    localStorage.setItem("otp", a);
     navigate("/login");
   };
   return (
@@ -20,7 +21,11 @@ export default function Profile() {
         <p>Country</p>
         <p id="number">
           <span>IN +91</span>
-          <input type="text" placeholder="Enter your number" />
+          <input
+            type="text"
+            placeholder="Enter your number"
+            onClick={(e) => (e.target.value = "7046581170")}
+          />
         </p>
         <button onClick={submitForm}>Send OTP</button>
         <p id="privacy-policy">

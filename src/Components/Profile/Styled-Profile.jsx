@@ -66,6 +66,7 @@ let Section = styled.section`
         padding: 0 0 7px 7px;
         font-size: 12px;
         width: 80%;
+        cursor: pointer;
         &:focus {
           outline: none;
           font-size: 14px;

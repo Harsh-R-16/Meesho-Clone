@@ -28,6 +28,7 @@ export default function Login() {
             type="text"
             placeholder="enter your email address"
             id="emailId"
+            onClick={(e) => (e.target.value = "harsh.gajera17@gmail.com")}
           />
           <label htmlFor="fname">First Name:</label>
           <input
@@ -35,11 +36,26 @@ export default function Login() {
             placeholder="enter your first name"
             id="fname"
             required
+            onClick={(e) => (e.target.value = "Harsh")}
           />
           <label htmlFor="lname">Last Name:</label>
-          <input type="text" placeholder="enter your last name" id="lname" />
+          <input
+            type="text"
+            placeholder="enter your last name"
+            id="lname"
+            onClick={(e) => (e.target.value = "Gajera")}
+          />
           <label htmlFor="otp">Enter OTP:</label>
-          <input type="text" placeholder="enter otp" id="otp" />
+          <input
+            type="text"
+            placeholder="enter otp"
+            id="otp"
+            onClick={(e) =>
+              (e.target.value = localStorage.getItem("otp")
+                ? localStorage.getItem("otp")
+                : 123456)
+            }
+          />
           <button>Verify</button>
         </form>
       </div>

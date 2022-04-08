@@ -53,6 +53,10 @@ export default function Cart() {
   const navigate = useNavigate();
   const handleClick = () => {
     dispatch(increaseStep());
+    localStorage.setItem(
+      "total",
+      Math.round(cartData.reduce((acc, cur) => acc + cur.tsprice, 0) * 0.7)
+    );
     navigate("/checkout/address");
   };
   return (

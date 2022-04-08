@@ -3,13 +3,6 @@
   color: black;
 }
 
-.checkoutNav {
-  /* display:flex;
-    align-items: center;
-    justify-content: space-evenly; */
-  width: 700px;
-}
-
 .logodiv {
   margin-top: -30px;
   padding: 10px;
@@ -20,11 +13,8 @@
   display: grid;
   grid-template-columns: 45% 50%;
   gap: 10px;
-  /* align-items: center;
-    justify-content: space-between; */
   width: 80%;
   margin: auto;
-  /* border: 1px solid black;  */
 }
 
 .cartLeftp1 {
@@ -82,9 +72,7 @@ td {
 
 .stepsbox {
   width: 600px;
-  margin-top: 20px;
-  margin: 30px auto 0;
-  margin-left: 30vw;
+  margin: 36px auto 0;
 }
 
 .middleItemDiv * {
@@ -116,9 +104,6 @@ td {
 }
 
 .pay1 {
-  /* border: 3px solid black;
-  display: flex;
-  flex-direction: column; */
   padding-left: 160px;
   padding-top: 20px;
 }

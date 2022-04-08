@@ -5,6 +5,7 @@ import {
   SAVE_ADDRESS,
   ADD_NAME,
   REMOVE_FROM_CART,
+  EMPTY_CART,
 } from "./action";
 // =======
 // import { ADD_TO_CART } from "./action";
@@ -50,6 +51,13 @@ export const reducer = (store, action) => {
         ...store,
         cart: data,
         count: data.length,
+      };
+    case EMPTY_CART:
+      localStorage.setItem("cart", JSON.stringify([]));
+      return {
+        ...store,
+        cart: [],
+        count: 0,
       };
     default:
       return store;

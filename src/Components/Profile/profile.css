@@ -41,6 +41,7 @@
   border-bottom: 1px solid #000;
   padding: 0 0 5px 7px;
   font-size: 12px;
+  cursor: pointer;
 }
 #login-page input:focus {
   outline: none;

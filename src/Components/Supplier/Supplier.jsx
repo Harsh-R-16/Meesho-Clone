@@ -44,6 +44,8 @@ let data = [
 export default function Supplier() {
   let [ind, setInd] = React.useState(0);
   let [show, setShow] = React.useState(true);
+  let [inp, setInp] = React.useState("");
+
   return (
     <>
       <main id="supplier-navigation">
@@ -89,7 +91,14 @@ export default function Supplier() {
                 {data[ind][2]}
               </p>
               <p id="form-para">
-                +91 <input type="text" placeholder="Enter Your Mobile Number" />{" "}
+                +91{" "}
+                <input
+                  type="text"
+                  placeholder="Enter Your Mobile Number"
+                  value={inp}
+                  onChange={(e) => setInp(e.target.value)}
+                  onClick={() => setInp(7046581170)}
+                />{" "}
                 <button>Start Selling</button>
               </p>
             </div>

@@ -2,8 +2,14 @@ import React from "react";
 import { FaLock } from "react-icons/fa";
 import styled from "styled-components";
 import img from "./form-img.png";
+let temp = [160320, "harsh.gajera17@gmail.com", "harsh1234"];
 
 export default function SupplierForm() {
+  let [data, setData] = React.useState({
+    otp: "",
+    email: "",
+    password: "",
+  });
   let [inp, setInp] = React.useState("");
   const inpHandler = (e) => {
     if (inp === "") {
@@ -13,6 +19,19 @@ export default function SupplierForm() {
     setInp(e.target.value);
   };
   console.log(inp.length);
+
+  const dataHandler = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const clcHandler = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: temp[+e.target.id],
+    });
+  };
   return (
     <>
       <Section>
@@ -32,10 +51,36 @@ export default function SupplierForm() {
                 Send OTP
               </button>
             </div>
-            <input type="text" placeholder="Enter OTP" className="input-text" />
-            <input type="text" placeholder="Email ID" className="input-text" />
+            <input
+              type="text"
+              placeholder="Enter OTP"
+              className="input-text"
+              name="otp"
+              value={data.otp}
+              onChange={dataHandler}
+              onClick={clcHandler}
+              id="0"
+            />
+            <input
+              type="text"
+              placeholder="Email ID"
+              className="input-text"
+              name="email"
+              value={data.email}
+              onChange={dataHandler}
+              onClick={clcHandler}
+              id="1"
+            />
             <div id="selling-form-password">
-              <input type="password" placeholder="Set Password" />
+              <input
+                type="password"
+                placeholder="Set Password"
+                name="password"
+                value={data.password}
+                onChange={dataHandler}
+                onClick={clcHandler}
+                id="2"
+              />
               <FaLock />
             </div>
             <ul>

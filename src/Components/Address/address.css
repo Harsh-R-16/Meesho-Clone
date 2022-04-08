@@ -1,0 +1,74 @@
+#address-section {
+  padding: 50px 0;
+  max-width: 95%;
+  width: 950px;
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 2.5vw;
+  margin: 0 auto;
+}
+#address-section form {
+  border-radius: 3px;
+  box-shadow: 1px 1px 6px 1px #e4e4e4;
+  padding: 20px 15px 30px;
+}
+#address-section h1 {
+  font-size: 21px;
+}
+#address-section hr {
+  border: none;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  margin: 17px 0 18px;
+}
+#address-section form div {
+  display: flex;
+  align-items: center;
+}
+#address-section form div h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+#address-section form input {
+  width: 99%;
+  margin: 18px 0;
+  border: none;
+  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgb(178, 178, 178);
+  padding: 0 0 8px 6px;
+  cursor: pointer;
+}
+#address-section form input:focus {
+  outline: none;
+}
+#address-section form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  background-color: #f43397;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 3px;
+}
+#address-section form + div {
+  box-shadow: 1px 1px 6px 1px #e4e4e4;
+  padding: 20px 15px;
+  height: fit-content;
+  border-radius: 3px;
+}
+#address-section div p {
+  margin: 15px 0;
+  font-size: 15px;
+  color: rgb(75, 75, 75);
+}
+#address-section div p span {
+  float: right;
+  font-weight: 500;
+}
+#address-section > div h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+#address-section > div h2 span {
+  float: right;
+}

@@ -30,6 +30,7 @@
   padding: 20px 15px;
   margin-bottom: 28px;
   padding-bottom: 20px;
+  border-radius: 3px;
 }
 #cart-main div img {
   float: left;
@@ -39,8 +40,8 @@
   width: 100px;
 }
 #cart-main div h3 + p {
-  font-size: 12px;
-  margin: 8px 0;
+  font-size: 11px;
+  margin: 9px 0;
   color: green;
 }
 #cart-main div h4 {
@@ -48,7 +49,7 @@
   font-size: 15px;
 }
 #cart-main div h5 {
-  margin: 7px 0;
+  margin: 8px 0;
   font-weight: 100;
   font-size: 12px;
 }
@@ -60,7 +61,7 @@
 }
 #cart-main h5 + p {
   font-size: 12px;
-  margin: 6px 0 10px;
+  margin: 6px 0 12px;
   color: rgb(1, 41, 68);
 }
 #cart-main div div {
@@ -99,7 +100,7 @@
   padding: 2px;
 }
 #payment-details p {
-  margin-bottom: 11px;
+  margin-bottom: 12px;
   font-size: 15px;
 }
 #payment-details p:nth-of-type(1) {
