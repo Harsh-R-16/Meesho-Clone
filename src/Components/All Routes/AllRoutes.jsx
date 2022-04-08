@@ -30,18 +30,45 @@ export default function AllRoutes() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/supplier" element={<Supplier />} />
-      </Routes>
-       <Checkout/>
-      <Routes>
-      
-         <Route path="/checkout/cart" element={<Cart />} />
-        <Route path="/checkout/address" element={<Address />} />
-        <Route path="/checkout/payment" element={<Payment />} />
-        <Route path="/checkout/summary" element={<Summary />} />
-      
+        <Route
+          path="/checkout/cart"
+          element={
+            <>
+              <Checkout />
+              <Cart />
+            </>
+          }
+        />
+        <Route
+          path="/checkout/address"
+          element={
+            <>
+              <Checkout />
+              <Address />
+            </>
+          }
+        />
+        <Route
+          path="/checkout/payment"
+          element={
+            <>
+              <Checkout />
+              <Payment />
+            </>
+          }
+        />
+        <Route
+          path="/checkout/summary"
+          element={
+            <>
+              <Checkout />
+              <Summary />
+            </>
+          }
+        />
       </Routes>
 
-      <Footer /> 
+      <Footer />
     </>
   );
 }

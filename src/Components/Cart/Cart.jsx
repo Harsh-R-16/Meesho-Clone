@@ -19,6 +19,7 @@ export default function Cart() {
     if (cart.includes(allProducts[i].id)) {
       let { img, name, soldBy, aprice, sprice, id } = allProducts[i];
       res.push({
+        id,
         img,
         name,
         soldBy,
@@ -27,7 +28,6 @@ export default function Cart() {
         q: 1,
         taprice: aprice,
         tsprice: sprice,
-        id,
       });
     }
   }

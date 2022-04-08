@@ -36,7 +36,6 @@ export default function Product() {
   if (cart.includes(+id)) state = "Already in the Cart";
 
   const clcHandler = (e) => {
-    console.log(e)
     dispatch(addToCart(e.target.id));
     if (state === "Add to Cart") setState("Already in the Cart");
   };
