@@ -1,41 +1,9 @@
-import { Button } from "@mui/material";
 import React from "react";
-
-// import styles from '../allstyles.module.css'
-// import CartItem from "./CartItem";
-// import ProductPricing from "./ProductPricing";
-// import { allProducts } from "../../AllProducts";
-// import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
-// import { increaseStep } from "../../Redux/action";
-// export default function Cart() {
-//   const cart = localStorage.getItem('cart')
-//   const navigate = useNavigate()
-//   const dispatch=useDispatch()
-//   const handleClick = (e) => {
-//     dispatch(increaseStep())
-//     navigate('/checkout/address')
-//   }
-//   console.log("cart->", cart)
-//   return (
-//     <div className={styles.cartDiv}>
-//       <div className={styles.cartSec}>
-//         <div className={styles.cartLeftp1}>
-//         <strong> Cart </strong>   | 1 item   
-//         </div>
-//       <CartItem/>
-//       </div>
-//       <hr style={{margin:'0px 20px'}} />
-//       <ProductPricing title='Continue' handleClick={handleClick} />
-      
-//     </div>
-//   )
-// =======
 import "./cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import { allProducts } from "../../AllProducts";
 import { useNavigate } from "react-router-dom";
-import { increaseStep } from "../../Redux/action";
+import { increaseStep, removeFromCart } from "../../Redux/action";
 let arr = [
   Math.floor(Math.random() * 20) + 7,
   Math.floor(Math.random() * 20) + 7,
@@ -45,10 +13,11 @@ let arr = [
 ];
 export default function Cart() {
   let cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   let res = [];
   for (let i = 0; i < allProducts.length; i++) {
     if (cart.includes(allProducts[i].id)) {
-      let { img, name, soldBy, aprice, sprice } = allProducts[i];
+      let { img, name, soldBy, aprice, sprice, id } = allProducts[i];
       res.push({
         img,
         name,
@@ -58,6 +27,7 @@ export default function Cart() {
         q: 1,
         taprice: aprice,
         tsprice: sprice,
+        id,
       });
     }
   }
@@ -80,12 +50,11 @@ export default function Cart() {
     console.log(newData);
   };
 
-  const dispatch = useDispatch()
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const handleClick = () => {
-    dispatch(increaseStep())
-    navigate('/checkout/address')
-  }
+    dispatch(increaseStep());
+    navigate("/checkout/address");
+  };
   return (
     <main id="cart-main">
       <section>
@@ -95,7 +64,7 @@ export default function Cart() {
           <span id="total-items">{cartData.length} Items</span>
         </h2>
         {cartData.map((i, index) => (
-          <div key={index}>
+          <div key={index} id={i.id}>
             <img src={i.img} alt="" />
             <h3>{i.name}</h3>
             <p>Only {arr[index % 5]} Left In Stock</p>
@@ -111,11 +80,12 @@ export default function Cart() {
               <button onClick={(e) => countHandler(e, "inc")}>+</button>
             </div>
             <button
-              id={index}
+              id={i.id}
               onClick={() => {
                 let newData = [...cartData];
                 newData.splice(index, 1);
                 setCartData(newData);
+                dispatch(removeFromCart(i.id));
               }}
             >
               Remove
@@ -184,6 +154,4 @@ export default function Cart() {
       </section>
     </main>
   );
-
 }
-

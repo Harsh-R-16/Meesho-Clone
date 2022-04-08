@@ -12,7 +12,7 @@
 #cart-main h1 + h2 {
   font-size: 17px;
   font-weight: 500;
-  margin-bottom: 18px;
+  margin-bottom: 19px;
 }
 #cart-line {
   font-weight: 100;
@@ -77,10 +77,10 @@
   border: 1px solid #010001;
 }
 #cart-main div + button {
-  background-color: #f43397;
-  color: #ffffff;
-  border: none;
-  padding: 5px 18px;
+  color: #f43397;
+  background-color: #ffffff;
+  border: 1px solid #f43397;
+  padding: 4px 18px;
   margin-left: 15px;
 }
 #cart-main section:nth-of-type(2) {
