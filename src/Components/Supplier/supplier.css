@@ -1,0 +1,115 @@
+#supplier-navigation {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+#supplier-navigation nav {
+  width: 95.7vw;
+  background-color: #fff;
+  padding: 20px 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+#supplier-navigation nav div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1vw;
+  width: 850px;
+}
+#supplier-navigation nav p {
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+#supplier-navigation h1 {
+  text-align: center;
+  background-color: #f43397;
+  color: #fff;
+  padding: 13px;
+  font-size: 22px;
+  font-weight: 500;
+  position: fixed;
+  width: 100%;
+  top: 85px;
+}
+#supplier-navigation svg {
+  width: 120px;
+}
+#supplier-navigation button {
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  color: white;
+  background-color: #f43397;
+  border: none;
+  border: 1px solid #f43397;
+  transition: background-color 0.2s linear;
+}
+#supplier-navigation button:nth-of-type(1) {
+  color: #f43397;
+  background-color: white;
+  border: 1px solid #f43397;
+}
+#supplier-navigation button:hover {
+  color: #f43397;
+  background-color: white;
+  border: 1px solid #f43397;
+}
+#supplier-navigation button:nth-of-type(1):hover {
+  color: white;
+  background-color: #f43397;
+}
+#supplier-form {
+  background-color: #fdf7f9;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#supplier-form img {
+  height: 470px;
+  width: 750px;
+}
+#supplier-form div {
+  padding: 70px 20px 0 120px;
+}
+#supplier-form h1 {
+  font-size: 30px;
+  line-height: 135%;
+  margin-bottom: 20px;
+  color: rgb(34, 34, 34);
+}
+#supplier-form h1 span {
+  color: #f43397;
+}
+#supplier-form #form-para {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin: 18px 0;
+  padding-left: 10px;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 5px;
+  overflow: hidden;
+}
+#form-para button {
+  background-color: #f43397;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 15px;
+}
+#form-para input {
+  flex-grow: 1;
+  border: none;
+  background-color: inherit;
+  margin: 0 13px 0 10px;
+}
+#form-para input:focus {
+  outline: none;
+}
+#supplier-form + img {
+  width: 99.8%;
+  margin: 20px 0;
+}
