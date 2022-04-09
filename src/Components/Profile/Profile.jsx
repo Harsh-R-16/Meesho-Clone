@@ -3,6 +3,7 @@ import { Section } from "./Styled-Profile";
 import { useNavigate } from "react-router-dom";
 
 export default function Profile() {
+  let [inp, setInp] = React.useState("7046581170");
   let navigate = useNavigate();
   const submitForm = (e) => {
     let a = Math.round(Math.random() * 1000 + 123456);
@@ -24,7 +25,8 @@ export default function Profile() {
           <input
             type="text"
             placeholder="Enter your number"
-            onClick={(e) => (e.target.value = "7046581170")}
+            value={inp}
+            onChange={(e) => setInp(e.target.value)}
           />
         </p>
         <button onClick={submitForm}>Send OTP</button>

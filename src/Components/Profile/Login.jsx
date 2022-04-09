@@ -5,6 +5,12 @@ import { useDispatch } from "react-redux";
 import { addName } from "../../Redux/action.js";
 
 export default function Login() {
+  let [data, setData] = React.useState({
+    email: "harsh.gajera17@gmail.com",
+    fname: "Harsh",
+    lname: "Gajera",
+    otp: localStorage.getItem("otp"),
+  });
   let navigate = useNavigate();
   let dispatch = useDispatch();
   const submitForm = (e) => {
@@ -13,6 +19,12 @@ export default function Login() {
     dispatch(addName(name));
     localStorage.setItem("name", name);
     navigate("/checkout/cart");
+  };
+  const changeHandler = (e) => {
+    setData({
+      ...data,
+      [e.target.id]: e.target.value,
+    });
   };
   return (
     <section id="login-page">
@@ -27,8 +39,9 @@ export default function Login() {
           <input
             type="text"
             placeholder="enter your email address"
-            id="emailId"
-            onClick={(e) => (e.target.value = "harsh.gajera17@gmail.com")}
+            id="email"
+            value={data.email}
+            onChange={changeHandler}
           />
           <label htmlFor="fname">First Name:</label>
           <input
@@ -36,25 +49,24 @@ export default function Login() {
             placeholder="enter your first name"
             id="fname"
             required
-            onClick={(e) => (e.target.value = "Harsh")}
+            value={data.fname}
+            onChange={changeHandler}
           />
           <label htmlFor="lname">Last Name:</label>
           <input
             type="text"
             placeholder="enter your last name"
             id="lname"
-            onClick={(e) => (e.target.value = "Gajera")}
+            value={data.lname}
+            onChange={changeHandler}
           />
           <label htmlFor="otp">Enter OTP:</label>
           <input
             type="text"
             placeholder="enter otp"
             id="otp"
-            onClick={(e) =>
-              (e.target.value = localStorage.getItem("otp")
-                ? localStorage.getItem("otp")
-                : 123456)
-            }
+            value={data.otp}
+            onChange={changeHandler}
           />
           <button>Verify</button>
         </form>

@@ -19,6 +19,9 @@ function Payment() {
     }
     setColor("#06A759");
   };
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Section>
       <div>
@@ -83,6 +86,7 @@ function Payment() {
           type="text"
           placeholder="Card Number"
           id="0"
+          value={data[0]}
           onClick={(e) => (e.target.value = data[+e.target.id])}
         />
         <h2>Expiry Date</h2>
@@ -90,6 +94,7 @@ function Payment() {
           type="text"
           placeholder="MM/YY"
           id="1"
+          value={data[1]}
           onClick={(e) => (e.target.value = data[+e.target.id])}
         />
         <h2>CVV</h2>
@@ -97,6 +102,7 @@ function Payment() {
           type="text"
           placeholder="CVV"
           id="2"
+          value={data[2]}
           onClick={(e) => (e.target.value = data[+e.target.id])}
         />
         <h2>Name on Card</h2>
@@ -104,6 +110,7 @@ function Payment() {
           type="text"
           placeholder="Name on Card"
           id="3"
+          value={data[3]}
           onClick={(e) => (e.target.value = data[+e.target.id])}
         />
         <button onClick={handleClick}>Place Order</button>

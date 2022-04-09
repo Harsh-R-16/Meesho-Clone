@@ -6,9 +6,9 @@ let temp = [160320, "harsh.gajera17@gmail.com", "harsh1234"];
 
 export default function SupplierForm() {
   let [data, setData] = React.useState({
-    otp: "",
-    email: "",
-    password: "",
+    otp: "160320",
+    email: "harsh.gajera17@gmail.com",
+    password: "harsh1234",
   });
   let [inp, setInp] = React.useState("");
   const inpHandler = (e) => {
@@ -46,6 +46,7 @@ export default function SupplierForm() {
                 value={inp}
                 onChange={inpHandler}
                 maxLength={16}
+                onClick={() => setInp("+91 - 7046581170")}
               />
               <button className={inp.length > 15 ? "active" : ""}>
                 Send OTP

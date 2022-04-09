@@ -3,6 +3,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import "./modal.css";
+import { useDispatch } from "react-redux";
+import { emptyCart } from "../../Redux/action";
 
 const style = {
   position: "absolute",
@@ -18,9 +20,11 @@ const style = {
 
 export default function BasicModal() {
   const navigate = useNavigate();
+  let dispatch = useDispatch();
   const handleClose = () => {
     window.scrollTo(0, 0);
     navigate("/");
+    dispatch(emptyCart([]));
   };
   window.scrollTo(0, 0);
   return (

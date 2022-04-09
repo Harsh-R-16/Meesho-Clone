@@ -1,11 +1,10 @@
 import React from "react";
 import BasicModal from "./BasicModal";
-import { useDispatch } from "react-redux";
-import { emptyCart } from "../../Redux/action";
 
 export default function Summary() {
-  let dispatch = useDispatch();
-  dispatch(emptyCart([]));
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <BasicModal />

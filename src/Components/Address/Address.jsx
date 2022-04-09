@@ -22,7 +22,9 @@ export default function Address() {
     dispatch(increaseStep());
     navigate("/checkout/payment");
   };
-
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section id="address-section">
       <form action="" onSubmit={handleSubmit}>
@@ -38,6 +40,7 @@ export default function Address() {
           type="text"
           placeholder="Name"
           id="0"
+          value={data[0]}
           onClick={(e) => {
             e.target.value = data[+e.target.id];
           }}
@@ -46,6 +49,7 @@ export default function Address() {
           type="text"
           placeholder="Phone Number"
           id="1"
+          value={data[1]}
           onClick={(e) => {
             e.target.value = data[+e.target.id];
           }}
@@ -60,6 +64,7 @@ export default function Address() {
           type="text"
           placeholder="House no./ Building Name"
           id="2"
+          value={data[2]}
           onClick={(e) => {
             e.target.value = data[+e.target.id];
           }}
@@ -68,6 +73,7 @@ export default function Address() {
           type="text"
           placeholder="Road Name/ Area/ Colony"
           id="3"
+          value={data[3]}
           onClick={(e) => {
             e.target.value = data[+e.target.id];
           }}
@@ -76,6 +82,7 @@ export default function Address() {
           type="text"
           placeholder="Pincode"
           id="4"
+          value={data[4]}
           onClick={(e) => {
             e.target.value = data[+e.target.id];
           }}
@@ -84,6 +91,7 @@ export default function Address() {
           type="text"
           placeholder="City"
           id="5"
+          value={data[5]}
           onClick={(e) => {
             e.target.value = data[+e.target.id];
           }}
@@ -92,6 +100,7 @@ export default function Address() {
           type="text"
           placeholder="State"
           id="6"
+          value={data[6]}
           onClick={(e) => {
             e.target.value = data[+e.target.id];
           }}
@@ -100,6 +109,7 @@ export default function Address() {
           type="text"
           placeholder="Nearby Location (optional)"
           id="7"
+          value={data[7]}
           onClick={(e) => {
             e.target.value = data[+e.target.id];
           }}

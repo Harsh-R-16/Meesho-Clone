@@ -12,6 +12,9 @@ let arr = [
   Math.floor(Math.random() * 20) + 7,
 ];
 export default function Cart() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   let cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   let res = [];

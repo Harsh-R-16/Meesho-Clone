@@ -44,7 +44,7 @@ let data = [
 export default function Supplier() {
   let [ind, setInd] = React.useState(0);
   let [show, setShow] = React.useState(true);
-  let [inp, setInp] = React.useState("");
+  let [inp, setInp] = React.useState("7046581170");
 
   return (
     <>
@@ -97,7 +97,6 @@ export default function Supplier() {
                   placeholder="Enter Your Mobile Number"
                   value={inp}
                   onChange={(e) => setInp(e.target.value)}
-                  onClick={() => setInp(7046581170)}
                 />{" "}
                 <button>Start Selling</button>
               </p>

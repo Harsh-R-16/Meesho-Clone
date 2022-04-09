@@ -58,6 +58,7 @@ export const reducer = (store, action) => {
         ...store,
         cart: [],
         count: 0,
+        step: 0,
       };
     default:
       return store;
