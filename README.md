@@ -31,12 +31,12 @@
 # Features 
 
 1. Landing Page
-![Landing](https://imgur.com/18628aa1-2a33-4b57-bbd4-69b68867ae84)
+![Landing](https://i.imgur.com/nKDTwTd.png)
 
 2. Cart Section
-![Cart](https://imgur.com/37b05727-0e45-4f36-983f-abab8d7aaafa)
+![Cart](https://i.imgur.com/XfrAOt0.png)
 
 3. Product Page
-![Product](https://imgur.com/bd12ab8e-f40b-4d8a-aa1e-e94be327be73)
+![Product](https://i.imgur.com/VlUxeVG.png)
 
  
