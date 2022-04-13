@@ -28,8 +28,15 @@
 2. JavaScript | Rest Api
 3. React JS | Redux
 
+# Features 
 
-![Cart](https://i.imgur.com/7wXUg7Z.png)
-![Product](https://i.imgur.com/YJfJYRn.png)
+1. Landing Page
+![Landing](blob:https://imgur.com/18628aa1-2a33-4b57-bbd4-69b68867ae84)
+
+2. Cart Section
+![Cart](blob:https://imgur.com/37b05727-0e45-4f36-983f-abab8d7aaafa)
+
+3. Product Page
+![Product](blob:https://imgur.com/bd12ab8e-f40b-4d8a-aa1e-e94be327be73)
 
  
