@@ -1,4 +1,6 @@
 
+
+[Screenshot (251)](https://user-images.githubusercontent.com/81424725/163262313-ab716a7b-f8f9-4e08-b27d-d16def0d8823.png)
 Meesho is a social commerce platform that undertakes retail distribution, enabling small retail merchants to connect and sell their products effectively via social media channels. Bengaluru based Meesho aims to create an environment where anyone can start their business with zero investment. By 2020, the startup aims to create about 20 million micro-entrepreneurs. There are over two million resellers on the Meesho platform and more than 20,000 manufacturers from more than 500 towns who get distribution through Meesho. Meesho works on approximately 10-15 percent commission and sellers can earn with Meesho by adding a profit margin on every sale.
 # Getting Started with Create React App
 
