@@ -29,5 +29,5 @@
 3. React JS | Redux
 
 
-![Cart](https://imgur.com/7wXUg7Z)
+![Cart](https://i.imgur.com/7wXUg7Z.png)
  
