@@ -2,7 +2,7 @@
 
 Meesho is a social commerce platform that undertakes retail distribution, enabling small retail merchants to connect and sell their products effectively via social media channels.
 
-### **_This is a team project with three member team_**
+### **This is a team project with three member team.**
 
 #### Ayush Agrawal
 
@@ -12,7 +12,7 @@ Meesho is a social commerce platform that undertakes retail distribution, enabli
 
 #### Harsh Gajera
 
-> [Linkedin](https://www.linkedin.com/in/)
+> [Linkedin](https://www.linkedin.com/in/harsh-r-331b84216/)
 
 > [Github](https://github.com/Harsh-R-16)
 
@@ -23,6 +23,8 @@ Meesho is a social commerce platform that undertakes retail distribution, enabli
 > [Github](https://github.com/Shivamsmw)
 
 # Video Link
+
+> [Video URL](https://drive.google.com/file/d/1cuQnsBNQC-BbOWcZKwXOxwJxXbh_ozLM/view)
 
 # Deployed link of the project
 
@@ -37,10 +39,13 @@ Meesho is a social commerce platform that undertakes retail distribution, enabli
 # Features
 
 1. Landing Page
+
    ![Landing](https://i.imgur.com/nKDTwTd.png)
 
 2. Cart Section
+
    ![Cart](https://i.imgur.com/XfrAOt0.png)
 
 3. Product Page
+
    ![Product](https://i.imgur.com/VlUxeVG.png)
