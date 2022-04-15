@@ -1,4 +1,4 @@
-# Meesho Project
+# Meesho Website Clone
 
 Meesho is a social commerce platform that undertakes retail distribution, enabling small retail merchants to connect and sell their products effectively via social media channels.
 
@@ -26,7 +26,7 @@ Meesho is a social commerce platform that undertakes retail distribution, enabli
 
 > [Video URL](https://drive.google.com/file/d/1cuQnsBNQC-BbOWcZKwXOxwJxXbh_ozLM/view)
 
-# Deployed link of the project
+# Deployed link of the Website
 
 > [Meesho.com](https://meesho-website-clone.netlify.app/)
 
