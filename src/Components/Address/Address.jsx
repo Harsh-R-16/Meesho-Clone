@@ -16,6 +16,7 @@ let data = [
   "Near Busstand",
 ];
 export default function Address() {
+  let [inp, setInp] = React.useState(data);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleSubmit = () => {
@@ -25,6 +26,12 @@ export default function Address() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const changeHandler = (e) => {
+    let newInp = [...inp];
+    let { id, value } = e.target;
+    newInp[+id] = value;
+    setInp(newInp);
+  };
   return (
     <section id="address-section">
       <form action="" onSubmit={handleSubmit}>
@@ -40,19 +47,15 @@ export default function Address() {
           type="text"
           placeholder="Name"
           id="0"
-          value={data[0]}
-          onClick={(e) => {
-            e.target.value = data[+e.target.id];
-          }}
+          value={inp[0]}
+          onChange={changeHandler}
         />
         <input
           type="text"
           placeholder="Phone Number"
           id="1"
-          value={data[1]}
-          onClick={(e) => {
-            e.target.value = data[+e.target.id];
-          }}
+          value={inp[1]}
+          onChange={changeHandler}
         />
         <div>
           <LocationOnOutlinedIcon
@@ -64,55 +67,43 @@ export default function Address() {
           type="text"
           placeholder="House no./ Building Name"
           id="2"
-          value={data[2]}
-          onClick={(e) => {
-            e.target.value = data[+e.target.id];
-          }}
+          value={inp[2]}
+          onChange={changeHandler}
         />
         <input
           type="text"
           placeholder="Road Name/ Area/ Colony"
           id="3"
-          value={data[3]}
-          onClick={(e) => {
-            e.target.value = data[+e.target.id];
-          }}
+          value={inp[3]}
+          onChange={changeHandler}
         />
         <input
           type="text"
           placeholder="Pincode"
           id="4"
-          value={data[4]}
-          onClick={(e) => {
-            e.target.value = data[+e.target.id];
-          }}
+          value={inp[4]}
+          onChange={changeHandler}
         />
         <input
           type="text"
           placeholder="City"
           id="5"
-          value={data[5]}
-          onClick={(e) => {
-            e.target.value = data[+e.target.id];
-          }}
+          value={inp[5]}
+          onChange={changeHandler}
         />
         <input
           type="text"
           placeholder="State"
           id="6"
-          value={data[6]}
-          onClick={(e) => {
-            e.target.value = data[+e.target.id];
-          }}
+          value={inp[6]}
+          onChange={changeHandler}
         />
         <input
           type="text"
           placeholder="Nearby Location (optional)"
           id="7"
-          value={data[7]}
-          onClick={(e) => {
-            e.target.value = data[+e.target.id];
-          }}
+          value={inp[7]}
+          onChange={changeHandler}
         />
         <button>Deliver to this Address</button>
       </form>

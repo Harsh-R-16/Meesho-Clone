@@ -5,6 +5,7 @@ import { increaseStep } from "../../Redux/action";
 import styled from "styled-components";
 let data = ["1234 5678 1234 5678", "12/25", "123", "Harsh Gajera"];
 function Payment() {
+  let [inp, setInp] = React.useState(data);
   let [color, setColor] = React.useState("#06A759");
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -22,6 +23,12 @@ function Payment() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const changeHandler = (e) => {
+    let newInp = [...inp];
+    let { id, value } = e.target;
+    newInp[+id] = value;
+    setInp(newInp);
+  };
   return (
     <Section>
       <div>
@@ -86,32 +93,32 @@ function Payment() {
           type="text"
           placeholder="Card Number"
           id="0"
-          value={data[0]}
-          onClick={(e) => (e.target.value = data[+e.target.id])}
+          value={inp[0]}
+          onChange={changeHandler}
         />
         <h2>Expiry Date</h2>
         <input
           type="text"
           placeholder="MM/YY"
           id="1"
-          value={data[1]}
-          onClick={(e) => (e.target.value = data[+e.target.id])}
+          value={inp[1]}
+          onChange={changeHandler}
         />
         <h2>CVV</h2>
         <input
           type="text"
           placeholder="CVV"
           id="2"
-          value={data[2]}
-          onClick={(e) => (e.target.value = data[+e.target.id])}
+          value={inp[2]}
+          onChange={changeHandler}
         />
         <h2>Name on Card</h2>
         <input
           type="text"
           placeholder="Name on Card"
           id="3"
-          value={data[3]}
-          onClick={(e) => (e.target.value = data[+e.target.id])}
+          value={inp[3]}
+          onChange={changeHandler}
         />
         <button onClick={handleClick}>Place Order</button>
       </form>
