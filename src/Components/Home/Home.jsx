@@ -30,7 +30,7 @@ export default function Home() {
         </div>
         <div>
           <img
-            src="https://images.meesho.com/images/marketing/1648576577712.jpg"
+            src="https://images.meesho.com/images/marketing/1651230340362.webp"
             alt=""
           />
         </div>
@@ -62,6 +62,9 @@ export default function Home() {
               <Link to={`/product/${id}`}>
                 <div key={index}>
                   <img src={img} alt="" className="main-img" />
+                  <p className="quantity">
+                    + {Math.floor(Math.random() * 7) + 1} More
+                  </p>
                   <p className="product-name">{name}</p>
                   <p className="mkt">Sold By: {soldBy}</p>
                   <p className="price">

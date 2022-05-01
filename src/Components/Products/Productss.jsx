@@ -97,6 +97,9 @@ export function ProductS() {
             ) => (
               <div key={index} onClick={() => navigate(`/product/${id}`)}>
                 <img src={img} alt="" className="main-img" />
+                <p className="quantity">
+                  + {Math.floor(Math.random() * 7) + 1} More
+                </p>
                 <p className="product-name">{name}</p>
                 <p className="mkt">Sold By: {soldBy}</p>
                 <p className="price">

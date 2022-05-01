@@ -1,0 +1,10 @@
+.quantity {
+  color: rgb(88, 88, 88);
+  background-color: #f9f9f9;
+  position: absolute;
+  top: 334px;
+  font-size: 13.5px;
+  font-weight: 400;
+  padding: 7px 10px;
+  border-top-right-radius: 5px;
+}
