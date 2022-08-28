@@ -33,7 +33,7 @@ let Section = styled.section`
   #product-article-2 {
     display: block;
     margin-right: 30px;
-    /* border: 1px solid red; */
+    position: relative;
     height: fit-content;
     text-align: center;
     #main-img {

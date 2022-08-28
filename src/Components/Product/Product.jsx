@@ -56,6 +56,7 @@ export default function Product() {
       </article>
       <article id="product-article-2">
         <img src={image} alt="" id="main-img" />
+        <p className="more">+ {Math.floor(Math.random() * 7) + 1} More</p>
         <button id={+id} onClick={clcHandler}>
           <FaShoppingCart /> {state}
         </button>

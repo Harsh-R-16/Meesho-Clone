@@ -10,7 +10,6 @@ import Payment from "../Payment/Payment";
 import Summary from "../Summary/Summary";
 import Profile from "../Profile/Profile";
 import Login from "../Profile/Login";
-import Supplier from "../Supplier/Supplier";
 import Footer from "../Footer/Footer";
 import Checkout from "../Checkout/Checkout";
 
@@ -20,16 +19,13 @@ export default function AllRoutes() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/cart" element={<Cart />} /> */}
         <Route path="/products" element={<Products />} />
         <Route path="/product" element={<Product />} />
-
         <Route path="/products/:type" element={<Products />} />
         <Route path="/products/:type/:subtype" element={<ProductS />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/supplier" element={<Supplier />} />
         <Route
           path="/checkout/cart"
           element={
