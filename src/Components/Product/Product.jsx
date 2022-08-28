@@ -42,7 +42,7 @@ export default function Product() {
 
   console.log(allProducts[i], i);
   let { img, name, soldBy, similar, sprice, aprice, rating, reviews, details } =
-    allProducts[i];
+    allProducts[i] || allProducts[0];
   React.useEffect(() => {
     setImage(img);
     window.scrollTo(0, 0);

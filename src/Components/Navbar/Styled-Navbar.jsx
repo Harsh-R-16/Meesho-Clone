@@ -64,6 +64,11 @@ let Nav = styled.nav`
             margin-right: 9px;
           }
 
+          span{
+            position: relative;
+            top: -3px
+          }
+
           &:hover {
               background-color: #e4e5e7;
             }
