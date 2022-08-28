@@ -57,8 +57,7 @@ let Nav = styled.nav`
           grid-template-columns: 1fr
         }
       p {
-          padding: 8px 14px;
-          font-size: 13px !important;
+          padding: 7px 14px;
           margin: 0 !important;display:block !important;
           svg {
             margin-right: 9px;
@@ -66,7 +65,8 @@ let Nav = styled.nav`
 
           span{
             position: relative;
-            top: -3px
+            top: -4px;
+            font-size: 12px !important;
           }
 
           &:hover {

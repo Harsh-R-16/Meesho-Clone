@@ -12,7 +12,7 @@ let total = Math.round(Math.random() * 1000 + 4526);
 let res;
 export default function Products() {
   let { type } = useParams();
-  // console.log(type);
+  if (!type) type = "Men";
   let navigate = useNavigate();
   let [products, setProducts] = useState([]);
   let [index, setIndex] = useState(0);
